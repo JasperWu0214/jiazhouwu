@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hi! I'm JiaZhou Wu</title>
+<meta name="description" content="A showcase of JiaZhou Wu's skills, achievements and experience">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { peach: '#F8C4B4' },
+      fontFamily: { sans: ['Segoe UI', 'system-ui', '-apple-system', 'sans-serif'] },
+      animation: { bounce: 'bounce 1s infinite' },
+      keyframes: { bounce: { '0%, 100%': { transform: 'translateY(-25%)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' }, '50%': { transform: 'none', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' } } }
+    }
+  }
+}
+</script>
+<style>
+  /* ===== CUSTOM SCROLLBAR ===== */
+  ::-webkit-scrollbar { width: 12px; }
+  ::-webkit-scrollbar-track { background: #1a1a1a; }
+  ::-webkit-scrollbar-thumb { background: #F8C4B4; border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(248,196,180,0.8); }
+
+  /* ===== GRADIENT TEXT (exact from original) ===== */
+  .gradient-text {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #f8c4b4, #f8d6c4);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  /* ===== ANIMATED BACKGROUND (optional) ===== */
+  .animated-bg {
+    background: linear-gradient(-45deg, #0a192f, #112240, #1a365d, #112240);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* ===== GLOW EFFECT ===== */
+  .glow { box-shadow: 0 0 20px rgba(248,196,180,0.5); }
+  .glow:hover { box-shadow: 0 0 30px rgba(248,196,180,0.8); }
+
+  /* ===== TYPEWRITER CURSOR ===== */
+  .typewriter-cursor::after {
+    content: "|";
+    animation: blink 1s step-end infinite;
+    color: #F8C4B4;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* ===== SECTION DIVIDERS (from original) ===== */
+  section {
+    transition: background-color 0.5s;
+    position: relative;
+  }
+  section::after {
+    content: "";
+    pointer-events: none;
+    background: linear-gradient(transparent, rgba(0,0,0,0.1));
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  /* ===== MARQUEE ===== */
+  @keyframes marqueeLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes marqueeRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .animate-marquee-left {
+    animation: marqueeLeft 30s linear infinite;
+  }
+  .animate-marquee-right {
+    animation: marqueeRight 30s linear infinite;
+  }
+  .animate-marquee-left:hover,
+  .animate-marquee-right:hover {
+    animation-play-state: paused;
+  }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body class="text-white min-h-screen bg-gradient-to-b from-[#103161] via-[#0d284f] to-[#051121] overflow-x-hidden antialiased" style="font-family:'Segoe UI',system-ui,-apple-system,sans-serif;font-size:18px;">
+
+<!-- Image Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center hidden cursor-pointer" onclick="closeLightbox()">
+  <button class="absolute top-4 right-4 text-white/60 hover:text-white text-3xl transition-colors z-10" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="" class="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl" />
+</div>
+
+<!-- ================================================ -->
+<!--  NAVBAR — exact class match to original          -->
+<!-- ================================================ -->
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out px-4 md:px-8 lg:px-16 bg-transparent py-6">
+  <div class="container mx-auto flex justify-between items-center">
+    <!-- Logo -->
+    <a href="#home" class="flex items-center">
+      <span class="text-2xl">👨‍💻</span>
+    </a>
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center space-x-10 mr-8">
+      <a href="#home" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase">Home</a>
+      <a href="#about" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase">About</a>
+      <a href="#academics" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase">Academics</a>
+      <a href="#achievements" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase">Achievements</a>
+      <a href="#experience" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase">Experience</a>
+    </div>
+    <!-- Mobile -->
+    <button id="menu-btn" class="md:hidden flex items-center space-x-4" onclick="toggleMenu()">
+      <svg id="menu-icon-open" class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="menu-icon-close" class="w-6 h-6 text-white hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden absolute w-full bg-black/95 transition-all duration-300 ease-in-out overflow-hidden max-h-0 left-0 top-full">
+    <div class="flex flex-col space-y-5 px-4 py-6">
+      <a href="#home" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase" onclick="toggleMenu()">Home</a>
+      <a href="#about" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase" onclick="toggleMenu()">About</a>
+      <a href="#achievements" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase" onclick="toggleMenu()">Achievements</a>
+      <a href="#experience" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase" onclick="toggleMenu()">Experience</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================================================ -->
+<!--  HERO — exact structure match to original       -->
+<!-- ================================================ -->
+<section id="home" class="min-h-screen flex flex-col justify-center pt-20">
+  <div class="container mx-auto px-4 md:px-6 py-20">
+    <div class="text-center">
+      <h1 class="text-6xl md:text-8xl font-bold mb-8 mt-8 reveal">
+        Hi! I'm <span class="gradient-text">JiaZhou Wu</span>
+      </h1>
+      <div class="text-2xl md:text-4xl text-gray-300 max-w-4xl mx-auto mb-10 reveal">
+        A <span id="typewriter" class="text-[#F8C4B4] typewriter-cursor"></span>
+      </div>
+    </div>
+    <div class="text-center mt-20 reveal">
+      <p class="text-xl text-gray-300">Scroll to Explore</p>
+      <svg class="w-6 h-6 mx-auto animate-bounce mt-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M19 14l-7 7m0 0l-7-7"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================ -->
+<!--  ABOUT — exact structure match to original      -->
+<!-- ================================================ -->
+<section id="about" class="container mx-auto px-4 md:px-6 py-20 relative z-10">
+  <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center reveal">A Little More About Myself.</h2>
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <!-- Photo -->
+    <div class="flex justify-center reveal">
+      <div class="relative w-72 h-72 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-[#F8C4B4] glow">
+        <img src="seminar.png" alt="JiaZhou Wu" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <!-- Text -->
+    <div class="space-y-6 reveal">
+      <p class="text-gray-300 text-lg">
+        As a high school student at Shenzhen Nanshan Foreign Language School, I am passionate about Computer Science and leveraging technology to solve real-world problems. My academic journey has been driven by curiosity, persistence, and a commitment to truth.
+      </p>
+      <p class="text-gray-300 text-lg">
+        Beyond academics, I founded the IELTS Club to ensure equal access to learning resources, co-authored a widely-used Cambridge CS revision guide, and served as a student ambassador in international exchange programs. I believe leadership is not about authority — it is about lifting others up and making yourself replaceable.
+      </p>
+      <p class="text-gray-300 text-lg">
+        I enjoy working out, listening to music, and exploring the latest in machine learning. My goal is to study Computer Science and contribute my own piece to the vast universe of knowledge.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================ -->
+<!--  ACADEMIC RESULTS                                -->
+<!-- ================================================ -->
+<section id="academics" class="container mx-auto px-4 md:px-6 py-20">
+  <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center reveal">Academic Results</h2>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+    <!-- SMC -->
+    <div class="bg-gray-800/80 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-lg group reveal">
+      <div class="h-56 bg-gray-700 relative overflow-hidden">
+        <img src="smc.jpeg" alt="Senior Mathematical Challenge 2024" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="p-5">
+        <h3 class="font-semibold text-white text-lg mb-1 group-hover:text-[#F8C4B4] transition-colors">Senior Mathematical Challenge</h3>
+        <p class="text-[#F8C4B4] text-base font-bold">Gold Certificate</p>
+        <p class="text-gray-400 text-xs mt-1">2024</p>
+      </div>
+    </div>
+
+    <!-- AS-Level Results -->
+    <div class="bg-gray-800/80 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-lg group reveal">
+      <div class="h-56 bg-gray-700 relative overflow-hidden">
+        <img src="as-level-result.png" alt="Cambridge AS-Level Results" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="p-5">
+        <h3 class="font-semibold text-white text-lg mb-1 group-hover:text-[#F8C4B4] transition-colors">Cambridge AS-Level</h3>
+        <p class="text-[#F8C4B4] text-base font-bold">3a, Predicted A*A*A*A*</p>
+        <p class="text-gray-400 text-xs mt-1">June 2026 Series</p>
+      </div>
+    </div>
+
+    <!-- Outstanding Learner Award -->
+    <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg reveal flex flex-col justify-center">
+      <div class="p-6 text-center">
+        <div class="text-5xl mb-4">🏆</div>
+        <p class="text-gray-400 text-xs uppercase tracking-wider mb-2">Cambridge Outstanding Learner Award</p>
+        <p class="text-white font-bold text-lg mb-1">Top in China</p>
+        <p class="text-[#F8C4B4] text-base font-bold">Computer Science</p>
+        <p class="text-gray-400 text-xs mt-3">AS Level · June 2026 Series</p>
+      </div>
+    </div>
+
+    <!-- GPA -->
+    <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg reveal flex flex-col justify-center">
+      <div class="p-6 text-center">
+        <p class="text-gray-400 text-xs uppercase tracking-wider mb-3">Cumulative GPA</p>
+        <p class="text-7xl md:text-8xl font-bold text-[#F8C4B4] mb-4">3.83</p>
+        <p class="text-gray-300 text-sm mb-6">Unweighted · 4.00 Scale</p>
+        <div class="space-y-2 text-left max-w-xs mx-auto">
+          <div class="flex justify-between items-center">
+            <span class="text-gray-400 text-xs">Grade 11 Fall</span>
+            <span class="text-white font-semibold text-sm">3.93</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-1.5">
+            <div class="bg-[#F8C4B4] h-1.5 rounded-full" style="width:98%"></div>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-400 text-xs">Grade 10 Winter</span>
+            <span class="text-white font-semibold text-sm">3.81</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-1.5">
+            <div class="bg-[#F8C4B4] h-1.5 rounded-full" style="width:95%"></div>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-400 text-xs">Grade 10 Fall</span>
+            <span class="text-white font-semibold text-sm">3.76</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-1.5">
+            <div class="bg-[#F8C4B4] h-1.5 rounded-full" style="width:94%"></div>
+          </div>
+        </div>
+        <p class="text-gray-400 text-xs mt-4 italic">▲ Rising trend each semester</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================ -->
+<!--  ACHIEVEMENTS — styled like Skills section      -->
+<!-- ================================================ -->
+<section id="achievements" class="container mx-auto px-4 md:px-6 py-20">
+  <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center reveal">My Achievements</h2>
+
+  <div class="space-y-16 reveal">
+    <!-- Tech Stack -->
+    <div>
+      <h3 class="text-[#F8C4B4] text-lg mb-5 font-semibold text-center">💻 Tech Stack</h3>
+      <div class="relative overflow-hidden py-4">
+        <div class="flex gap-4 animate-marquee-left" id="tech-marquee">
+        </div>
+      </div>
+    </div>
+
+    <!-- Honors & Awards -->
+    <div>
+      <h3 class="text-[#F8C4B4] text-lg mb-5 font-semibold text-center">🏆 Honors &amp; Awards</h3>
+      <div class="relative overflow-hidden py-4">
+        <div class="flex gap-4 animate-marquee-right" id="honors-marquee">
+        </div>
+      </div>
+    </div>
+
+    <!-- Qualities -->
+    <div>
+      <h3 class="text-[#F8C4B4] text-lg mb-5 font-semibold text-center">💡 Qualities I Bring</h3>
+      <div class="relative overflow-hidden py-4">
+        <div class="flex gap-4 animate-marquee-left" id="qualities-marquee">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================ -->
+<!--  EXPERIENCE — Timeline from original            -->
+<!-- ================================================ -->
+<section id="experience" class="container mx-auto px-4 md:px-6 py-20">
+  <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center reveal">My Experience</h2>
+
+  <div class="relative">
+    <!-- Center timeline line -->
+    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#F8C4B4]/30"></div>
+
+    <div class="space-y-16">
+
+      <!-- Item 1: IELTS Club (right side) -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <!-- left: content -->
+        <div class="md:w-1/2 md:pr-16 md:text-right">
+          <div class="flex items-center gap-3 mb-4 md:justify-end">
+            <div>
+              <h3 class="text-white font-bold text-xl">President &amp; Co-founder</h3>
+              <p class="text-[#F8C4B4] text-sm">IELTS Club</p>
+              <p class="text-gray-400 text-xs mt-1">Founded during high school</p>
+            </div>
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🎓</div>
+          </div>
+        </div>
+        <!-- right: placeholder -->
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <!-- Detail card for IELTS Club -->
+      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+        <div class="p-6">
+          <p class="text-gray-300 text-sm mb-4">
+            I noticed that some classmates could not afford IELTS preparation materials. Instead of waiting, I founded the IELTS Club, recruited four peer tutors, and applied for school funding to purchase resources for everyone. Beyond giving lectures, I built a system where learning was free and accessible.
+          </p>
+          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
+            "Leadership is not about authority — it is about ensuring equal opportunity and using your own effort to lift others up."
+          </p>
+          <h4 class="text-white font-semibold mb-3 text-sm">Highlights</h4>
+          <!-- Score Improvement — visual showdown -->
+          <div class="bg-gray-700/50 rounded-lg p-4 mb-4 flex items-center justify-center gap-4 md:gap-8 flex-wrap">
+            <div class="text-center">
+              <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Before</p>
+              <p class="text-4xl md:text-5xl font-bold text-gray-400">5.5</p>
+              <p class="text-xs text-gray-500 mt-1">Listening</p>
+            </div>
+            <div class="text-3xl md:text-4xl font-bold text-[#F8C4B4]">→</div>
+            <div class="text-center">
+              <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">After 3 Months</p>
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">7.5</p>
+              <p class="text-xs text-[#F8C4B4] mt-1">Listening</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">👥 4 Peer Tutors</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">📚 Free Resources</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">💰 School Funding Secured</span>
+          </div>
+          <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-40 bg-gray-700 relative overflow-hidden">
+                <img src="ielts-101.jpeg" alt="IELTS 101 — Our First Class" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">IELTS 101 — Our First Class</span>
+            </a>
+            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-40 bg-gray-700 relative overflow-hidden">
+                <img src="ielts-slide.png" alt="Sample Lecture Slide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Sample Lecture Slide</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: CS Revision Note (alternating — right) -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <div class="md:w-1/2 md:pl-16">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">📝</div>
+            <div>
+              <h3 class="text-white font-bold text-xl">Co-author</h3>
+              <p class="text-[#F8C4B4] text-sm">Cambridge AS &amp; A Level CS Revision Note</p>
+              <p class="text-gray-400 text-xs mt-1">2-year project</p>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+        <div class="p-6">
+          <p class="text-gray-300 text-sm mb-4">
+            Realising existing notes lacked both quantity and quality, I reached out to a senior and spent two years co-writing a comprehensive revision note. I spotted an error in the official mark scheme — the exam board initially rejected my report, but I persisted with evidence until they corrected it.
+          </p>
+          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
+            "With commitment to truth, even a small individual action can make a huge difference to a community — and true leadership means making myself replaceable."
+          </p>
+          <h4 class="text-white font-semibold mb-2 text-sm">Impact</h4>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌍 400+ Downloads</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">✅ Mark Scheme Error Fixed</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🔄 Junior Trained</span>
+          </div>
+          <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
+          <!-- Sharing on Reddit — cropped to focus on top (title) portion -->
+          <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group mb-4">
+            <div class="h-40 bg-gray-700 relative overflow-hidden">
+              <img src="sharing-reddit.png" alt="Shared on Reddit and RedNote" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Shared on Reddit &amp; RedNote · 400+ downloads</span>
+          </a>
+          <div class="grid grid-cols-1 sm:grid-cols-1 gap-4">
+            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-40 bg-gray-700 relative overflow-hidden">
+                <img src="feedback.png" alt="Student Feedback" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Student Feedback We Found</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: WLSA Volunteer (left) -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <div class="md:w-1/2 md:pr-16 md:text-right">
+          <div class="flex items-center gap-3 mb-4 md:justify-end">
+            <div>
+              <h3 class="text-white font-bold text-xl">Volunteer</h3>
+              <p class="text-[#F8C4B4] text-sm">2025 WLSA China Conference Tour</p>
+              <p class="text-gray-400 text-xs mt-1">International Education Conference</p>
+            </div>
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🌍</div>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+        <div class="p-6">
+          <p class="text-gray-300 text-sm mb-4">
+            During the conference, a sudden schedule change left dozens of university representatives and anxious parents crowding the hallway. While my team froze, I stepped in — reassigned roles, faced the crowd, and kept my voice steady. A representative later told me I handled it "like an adult."
+          </p>
+          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
+            "Leadership is not about never panicking — it's about being the first to find your footing so others can follow."
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎤 Crisis Management</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🤝 Team Leadership</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🗣️ Public Communication</span>
+          </div>
+          <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-40 bg-gray-700 relative overflow-hidden">
+                <img src="wlsa-fair.jpeg" alt="WLSA University Fair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">WLSA University Fair</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: China-US Exchange (right) -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <div class="md:w-1/2 md:pl-16">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🇨🇳🇺🇸</div>
+            <div>
+              <h3 class="text-white font-bold text-xl">Student Ambassador</h3>
+              <p class="text-[#F8C4B4] text-sm">2025 China-U.S. Youth Exchange</p>
+              <p class="text-gray-400 text-xs mt-1">National-level Invitation</p>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+        <div class="p-6">
+          <p class="text-gray-300 text-sm mb-4">
+            Invited at the national level, American high school students came to China as guests of the President. I served as a student ambassador, sharing Chinese culture and building friendships that last to this day. Cultural exchange is not about showcasing superiority, but about genuine empathy.
+          </p>
+          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
+            "When you truly walk in another person's shoes, you don't just build bridges — you become one."
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌏 Cross-Cultural Communication</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎓 Student Diplomacy</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🤗 Empathy &amp; Connection</span>
+          </div>
+          <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-40 bg-gray-700 relative overflow-hidden">
+                <img src="us-china.jpeg" alt="China-U.S. Youth Exchange" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">China-U.S. Youth Exchange</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5: School Anniversary (left) -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <div class="md:w-1/2 md:pr-16 md:text-right">
+          <div class="flex items-center gap-3 mb-4 md:justify-end">
+            <div>
+              <h3 class="text-white font-bold text-xl">Campus Volunteer</h3>
+              <p class="text-[#F8C4B4] text-sm">School 30th Anniversary</p>
+              <p class="text-gray-400 text-xs mt-1">Shenzhen Nanshan Foreign Language School</p>
+            </div>
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🏫</div>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+        <div class="p-6">
+          <p class="text-gray-300 text-sm mb-4">
+            I served as a campus volunteer during my school's 30th anniversary celebration, welcoming returning alumni, guiding visitors, and helping the event run smoothly. Seeing alumni from different generations share their memories reminded me that a school is a living community sustained by everyone who passes through it.
+          </p>
+          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
+            "Service is leadership in its quietest form. Giving back felt not like work, but like a small thank-you to the place that shaped me."
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎯 Event Coordination</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">💛 Community Service</span>
+          </div>
+          <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-40 bg-gray-700 relative overflow-hidden">
+                <img src="school-open-day.jpeg" alt="School 30th Anniversary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">School 30th Anniversary Open Day</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6: Cross-School Seminar (right — alternating) -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <div class="md:w-1/2 md:pl-16">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🎙️</div>
+            <div>
+              <h3 class="text-white font-bold text-xl">Organizer &amp; Host</h3>
+              <p class="text-[#F8C4B4] text-sm">Cross-School Academic Experience Sharing Seminar</p>
+              <p class="text-gray-400 text-xs mt-1">6 Senior Students from 6 High Schools</p>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+        <div class="p-6">
+          <p class="text-gray-300 text-sm mb-4">
+            I noticed that junior high school students in my community lacked access to firsthand advice on how to navigate the transition to senior high school and prepare for international exams. Instead of waiting for someone else to bridge that gap, I took the initiative — I reached out across my network, personally invited six senior students from six different high schools, designed the agenda, coordinated schedules, and hosted the entire seminar myself.
+          </p>
+          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
+            "Leadership is not about having a title or waiting for permission — it is about seeing a need, bringing the right people together, and creating a space where others can grow."
+          </p>
+          <h4 class="text-white font-semibold mb-3 text-sm">Impact</h4>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🏫 6 High Schools Represented</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">👥 6 Senior Speakers Recruited</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">📋 Full Agenda &amp; Logistics</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎤 Hosted &amp; Facilitated</span>
+          </div>
+          <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-40 bg-gray-700 relative overflow-hidden">
+                <img src="seminar.png" alt="Cross-School Seminar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Cross-School Experience Sharing Seminar</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================ -->
+<!--  FUTURE — Call to action section                 -->
+<!-- ================================================ -->
+<section class="container mx-auto px-4 md:px-6 py-20">
+  <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center reveal">Looking Ahead</h2>
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <p class="text-2xl md:text-4xl text-gray-300 max-w-4xl mx-auto mb-10 leading-relaxed">
+      I hope to study <span class="text-[#F8C4B4]">Computer Science</span> at the <span class="text-[#F8C4B4]">University of Alberta</span>, drawn by its reputation in machine learning. I aspire to follow in the footsteps of <span class="text-[#F8C4B4]">Professor Richard Sutton</span> — to contribute my own piece to the vast universe of computer science.
+    </p>
+
+    <!-- Thanks to UAlberta -->
+    <div class="mt-16 max-w-2xl mx-auto reveal">
+      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg">
+        <div class="p-6 md:p-8 text-center">
+          <p class="text-gray-400 text-xs uppercase tracking-wider mb-2">Special Thanks</p>
+          <p class="text-white font-semibold text-lg mb-1">Office of the Registrar</p>
+          <p class="text-[#F8C4B4] font-semibold mb-4">University of Alberta</p>
+          <p class="text-gray-300 text-sm mb-6">Thank you for your patience, kindness, and unwavering support. You helped me more than you know. Truly, thank you.</p>
+          <!-- Financial Support Evidence -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-48 bg-gray-700 relative overflow-hidden">
+                <img src="financial-support-1.png" alt="Financial Support Evidence 1" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+              </div>
+            </div>
+            <div class="bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-48 bg-gray-700 relative overflow-hidden">
+                <img src="financial-support-2.png" alt="Financial Support Evidence 2" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================ -->
+<!--  FOOTER — exact match to original                -->
+<!-- ================================================ -->
+<footer class="bg-[#030a14] py-8">
+  <div class="container mx-auto px-4 md:px-6 text-center">
+    <p class="text-gray-400 text-sm">&copy; 2026 JiaZhou Wu. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// ===== LIGHTBOX =====
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+// Attach click to all images inside sections, except navbar logo
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openLightbox(img.src);
+  });
+});
+// Make images look clickable
+document.head.insertAdjacentHTML('beforeend', '<style>section img, footer img { cursor: pointer; } section img:hover { opacity: 0.9; }</style>');
+
+// ===== TYPEWRITER =====
+const words = ["Change-maker", "CS Student", "Leader", "Lifelong Learner"];
+let wordIndex = 0, charIndex = 0, isDeleting = false;
+const typewriterEl = document.getElementById('typewriter');
+
+function type() {
+  const current = words[wordIndex];
+  if (isDeleting) {
+    typewriterEl.textContent = current.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typewriterEl.textContent = current.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  let speed = isDeleting ? 40 : 100;
+
+  if (!isDeleting && charIndex === current.length) {
+    speed = 1500;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    speed = 300;
+  }
+
+  setTimeout(type, speed);
+}
+type();
+
+// ===== MOBILE MENU =====
+let menuOpen = false;
+function toggleMenu() {
+  menuOpen = !menuOpen;
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-icon-open');
+  const closeIcon = document.getElementById('menu-icon-close');
+
+  if (menuOpen) {
+    menu.classList.remove('max-h-0');
+    menu.classList.add('max-h-72');
+    openIcon.classList.add('hidden');
+    closeIcon.classList.remove('hidden');
+  } else {
+    menu.classList.add('max-h-0');
+    menu.classList.remove('max-h-72');
+    openIcon.classList.remove('hidden');
+    closeIcon.classList.add('hidden');
+  }
+}
+
+// ===== NAVBAR SCROLL =====
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+    nav.classList.add('bg-black/95', 'shadow-md');
+    nav.classList.remove('bg-transparent', 'py-6');
+    nav.classList.add('py-3');
+  } else {
+    nav.classList.remove('bg-black/95', 'shadow-md');
+    nav.classList.add('bg-transparent', 'py-6');
+    nav.classList.remove('py-3');
+  }
+});
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ===== MARQUEE DATA =====
+function createCard(icon, label) {
+  return `
+    <div class="flex flex-col items-center justify-center mx-3 w-32 shrink-0">
+      <div class="bg-gray-800 p-4 rounded-lg w-24 h-24 flex items-center justify-center mb-2 transition-all duration-300 hover:bg-[#F8C4B4]/20 hover:shadow-lg cursor-pointer">
+        <span class="text-3xl">${icon}</span>
+      </div>
+      <span class="text-xs text-gray-400 text-center">${label}</span>
+    </div>`;
+}
+
+// Tech Stack
+const techItems = [
+  ['🐍', 'Python'], ['☕', 'Java'], ['⚡', 'C++'],
+  ['📜', 'JavaScript'], ['🔷', 'TypeScript'], ['🏷️', 'HTML'],
+  ['🎨', 'CSS'], ['🗄️', 'SQL'], ['▲', 'Next.js'],
+  ['⚛️', 'React'], ['🌊', 'Tailwind CSS'], ['🧠', 'PyTorch'],
+  ['🔢', 'NumPy'], ['🐼', 'Pandas'], ['📓', 'Jupyter'],
+  ['🐧', 'Linux'], ['🔀', 'Git'], ['🐳', 'Docker'],
+  ['🐍', 'Python'], ['☕', 'Java'], ['⚡', 'C++'],
+  ['📜', 'JavaScript'], ['🔷', 'TypeScript'], ['🏷️', 'HTML'],
+];
+document.getElementById('tech-marquee').innerHTML = techItems.map(([i, l]) => createCard(i, l)).join('');
+
+// Honors
+const honorItems = [
+  ['🥇', 'SMC 2024 Gold Certificate'], ['📝', 'CS Revision Note Co-author'],
+  ['🌍', '400+ Downloads Worldwide'], ['✅', 'Mark Scheme Error Fixed'],
+  ['🎓', 'IELTS Club Founder'], ['🤝', 'WLSA Conference Volunteer'],
+  ['🥇', 'SMC 2024 Gold Certificate'], ['📝', 'CS Revision Note Co-author'],
+  ['🌍', '400+ Downloads Worldwide'], ['✅', 'Mark Scheme Error Fixed'],
+];
+document.getElementById('honors-marquee').innerHTML = honorItems.map(([i, l]) => createCard(i, l)).join('');
+
+// Qualities
+const qualityItems = [
+  ['🎯', 'Persistence'], ['💡', 'Truth-seeking'], ['🤝', 'Empathy'],
+  ['🗣️', 'Public Speaking'], ['📚', 'Teaching'], ['🔧', 'Problem Solving'],
+  ['🌏', 'Cross-cultural'], ['👥', 'Team Leadership'],
+  ['🎯', 'Persistence'], ['💡', 'Truth-seeking'], ['🤝', 'Empathy'],
+  ['🗣️', 'Public Speaking'], ['📚', 'Teaching'], ['🔧', 'Problem Solving'],
+];
+document.getElementById('qualities-marquee').innerHTML = qualityItems.map(([i, l]) => createCard(i, l)).join('');
+</script>
+
+</body>
+</html>
