@@ -83,10 +83,10 @@ tailwind.config = {
     100% { transform: translateX(0); }
   }
   .animate-marquee-left {
-    animation: marqueeLeft 30s linear infinite;
+    animation: marqueeLeft 18s linear infinite;
   }
   .animate-marquee-right {
-    animation: marqueeRight 30s linear infinite;
+    animation: marqueeRight 18s linear infinite;
   }
   .animate-marquee-left:hover,
   .animate-marquee-right:hover {
@@ -124,11 +124,11 @@ tailwind.config = {
     </a>
     <!-- Desktop Links -->
     <div class="hidden md:flex items-center space-x-10 mr-8">
-      <a href="#home" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase">Home</a>
-      <a href="#about" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase">About</a>
-      <a href="#academics" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase">Academics</a>
-      <a href="#achievements" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase">Achievements</a>
-      <a href="#experience" class="text-gray-400 hover:text-[#F8C4B4] transition-colors text-sm tracking-wider uppercase">Experience</a>
+      <a href="#home" class="nav-link text-gray-400 hover:text-[#F8C4B4] transition-all duration-300 text-sm tracking-wider uppercase border-b-2 border-transparent hover:border-[#F8C4B4] pb-0.5">Home</a>
+      <a href="#about" class="nav-link text-gray-400 hover:text-[#F8C4B4] transition-all duration-300 text-sm tracking-wider uppercase border-b-2 border-transparent hover:border-[#F8C4B4] pb-0.5">About</a>
+      <a href="#academics" class="nav-link text-gray-400 hover:text-[#F8C4B4] transition-all duration-300 text-sm tracking-wider uppercase border-b-2 border-transparent hover:border-[#F8C4B4] pb-0.5">Academics</a>
+      <a href="#achievements" class="nav-link text-gray-400 hover:text-[#F8C4B4] transition-all duration-300 text-sm tracking-wider uppercase border-b-2 border-transparent hover:border-[#F8C4B4] pb-0.5">Achievements</a>
+      <a href="#experience" class="nav-link text-gray-400 hover:text-[#F8C4B4] transition-all duration-300 text-sm tracking-wider uppercase border-b-2 border-transparent hover:border-[#F8C4B4] pb-0.5">Experience</a>
     </div>
     <!-- Mobile -->
     <button id="menu-btn" class="md:hidden flex items-center space-x-4" onclick="toggleMenu()">
@@ -412,11 +412,29 @@ tailwind.config = {
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
             "With commitment to truth, even a small individual action can make a huge difference to a community — and true leadership means making myself replaceable."
           </p>
+          <!-- Big-number panel -->
+          <div class="bg-gray-700/50 rounded-lg p-4 mb-4 flex items-center justify-center gap-6 md:gap-12 flex-wrap">
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">400+</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Downloads Worldwide</p>
+            </div>
+            <div class="w-px h-12 bg-gray-600 hidden sm:block"></div>
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">10+</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Countries Reached</p>
+            </div>
+            <div class="w-px h-12 bg-gray-600 hidden sm:block"></div>
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">1</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Official Error Corrected</p>
+            </div>
+          </div>
           <h4 class="text-white font-semibold mb-2 text-sm">Impact</h4>
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌍 400+ Downloads</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌍 400+ Downloads Worldwide</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌏 Students in 10+ Countries</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">✅ Mark Scheme Error Fixed</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🔄 Junior Trained</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🔄 Successor Trained</span>
           </div>
           <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
           <!-- Sharing on Reddit — cropped to focus on top (title) portion -->
@@ -437,6 +455,68 @@ tailwind.config = {
         </div>
       </div>
 
+      <!-- Cambridge Appeal — Sub-entry under CS Revision Note -->
+      <div class="bg-gray-800/60 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal border-l-4 border-[#F8C4B4]">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">📜</span>
+            <div>
+              <h3 class="text-white font-bold text-lg">Cambridge Mark Scheme Correction</h3>
+              <p class="text-[#F8C4B4] text-sm">Formal appeal submitted to Cambridge International Examinations — <span class="text-green-400 font-semibold">Accepted ✓</span></p>
+            </div>
+          </div>
+
+          <p class="text-gray-300 text-sm mb-4">
+            While writing the CS revision guide, I noticed the mark scheme gave <span class="text-red-400 font-semibold">"2"</span> as the answer to "State the number of transistors in each cell of flash memory." I believed <span class="text-green-400 font-semibold">"1"</span> should also be accepted — a flash cell is a single floating-gate MOSFET, not two transistors. I submitted evidence to Cambridge. My first appeal was dismissed. I gathered stronger documentation and resubmitted; two months later, they added "1" as an accepted answer.
+          </p>
+
+          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
+            "Rigour is not about being right. It is about caring enough about truth to be uncomfortable until it is found."
+          </p>
+
+          <!-- Screenshots -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+            <div class="bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300">
+              <p class="text-gray-400 text-xs px-3 pt-2">📷 Question Paper</p>
+              <img src="screenshot%20of%20the%20question.png" alt="Question Paper" class="w-full object-contain max-h-56" />
+            </div>
+            <div class="bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300">
+              <p class="text-gray-400 text-xs px-3 pt-2">📷 Original Mark Scheme (Answer: 2)</p>
+              <img src="screenshot%20of%20the%20mark%20scheme.png" alt="Mark Scheme" class="w-full object-contain max-h-56" />
+            </div>
+          </div>
+
+          <!-- Wikipedia + Email -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+            <div class="bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300">
+              <p class="text-gray-400 text-xs px-3 pt-2">📷 Wikipedia Evidence</p>
+              <img src="screenshot%20of%20the%20Wikipedia%20statement%20page.png" alt="Wikipedia Source" class="w-full object-contain max-h-56" />
+            </div>
+            <div class="bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300">
+              <p class="text-gray-400 text-xs px-3 pt-2">📷 Email Correspondence with Cambridge</p>
+              <img src="screenshot%20of%20appeal%20email.png" alt="Cambridge Email" class="w-full object-contain max-h-56" />
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <div class="flex flex-wrap items-center gap-2 md:gap-3 text-xs mb-4">
+            <span class="bg-gray-700/50 text-gray-300 px-2 py-1 rounded">Submitted evidence</span>
+            <span class="text-gray-500">→</span>
+            <span class="bg-red-400/20 text-red-400 px-2 py-1 rounded font-semibold">Rejected</span>
+            <span class="text-gray-500">→</span>
+            <span class="bg-gray-700/50 text-gray-300 px-2 py-1 rounded">Resubmitted with stronger evidence</span>
+            <span class="text-gray-500">→</span>
+            <span class="bg-green-400/20 text-green-400 px-2 py-1 rounded font-semibold">Accepted ✓ — "1" added to mark scheme</span>
+          </div>
+
+          <!-- Download -->
+          <a href="Cambridge_Mark_Scheme_Appeal.docx" download class="inline-flex items-center gap-2 bg-[#F8C4B4]/20 hover:bg-[#F8C4B4]/30 text-[#F8C4B4] px-4 py-2 rounded-lg transition-all duration-300 text-sm font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Download Full Appeal (.docx)
+          </a>
+        </div>
+      </div>
+
       <!-- Item 3: WLSA Volunteer (left) -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
@@ -444,8 +524,8 @@ tailwind.config = {
           <div class="flex items-center gap-3 mb-4 md:justify-end">
             <div>
               <h3 class="text-white font-bold text-xl">Volunteer</h3>
-              <p class="text-[#F8C4B4] text-sm">2025 WLSA China Conference Tour</p>
-              <p class="text-gray-400 text-xs mt-1">International Education Conference</p>
+              <p class="text-[#F8C4B4] text-sm">2025 WLSA (World Leading Schools Association) China Conference Tour</p>
+              <p class="text-gray-400 text-xs mt-1">International Conference · 20+ Top 50 Global Universities</p>
             </div>
             <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🌍</div>
           </div>
@@ -456,12 +536,25 @@ tailwind.config = {
       <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
-            During the conference, a sudden schedule change left dozens of university representatives and anxious parents crowding the hallway. While my team froze, I stepped in — reassigned roles, faced the crowd, and kept my voice steady. A representative later told me I handled it "like an adult."
+            During the conference, a sudden schedule change left dozens of university representatives from over 20 top-ranked global universities and anxious parents crowding the hallway. While my team froze, I stepped in — reassigned roles, faced the crowd, and kept my voice steady. A representative later told me I handled it "like an adult."
           </p>
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
             "Leadership is not about never panicking — it's about being the first to find your footing so others can follow."
           </p>
+          <!-- Big-number panel -->
+          <div class="bg-gray-700/50 rounded-lg p-4 mb-4 flex items-center justify-center gap-6 md:gap-12 flex-wrap">
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">20+</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Top 50 Global Universities</p>
+            </div>
+            <div class="w-px h-12 bg-gray-600 hidden sm:block"></div>
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">1</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Crisis Averted</p>
+            </div>
+          </div>
           <div class="flex flex-wrap gap-2">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌍 20+ University Representatives</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎤 Crisis Management</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🤝 Team Leadership</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🗣️ Public Communication</span>
@@ -502,7 +595,20 @@ tailwind.config = {
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
             "When you truly walk in another person's shoes, you don't just build bridges — you become one."
           </p>
+          <!-- Big-number panel -->
+          <div class="bg-gray-700/50 rounded-lg p-4 mb-4 flex items-center justify-center gap-6 md:gap-12 flex-wrap">
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">National</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Level Invitation</p>
+            </div>
+            <div class="w-px h-12 bg-gray-600 hidden sm:block"></div>
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">2</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Nations Connected</p>
+            </div>
+          </div>
           <div class="flex flex-wrap gap-2">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🏛️ Nationally Invited Program</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌏 Cross-Cultural Communication</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎓 Student Diplomacy</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🤗 Empathy &amp; Connection</span>
@@ -519,57 +625,17 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Item 5: School Anniversary (left) -->
+      <!-- Item 5: Cross-School Seminar (left) -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
         <div class="md:w-1/2 md:pr-16 md:text-right">
           <div class="flex items-center gap-3 mb-4 md:justify-end">
             <div>
-              <h3 class="text-white font-bold text-xl">Campus Volunteer</h3>
-              <p class="text-[#F8C4B4] text-sm">School 30th Anniversary</p>
-              <p class="text-gray-400 text-xs mt-1">Shenzhen Nanshan Foreign Language School</p>
-            </div>
-            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🏫</div>
-          </div>
-        </div>
-        <div class="hidden md:block md:w-1/2"></div>
-      </div>
-
-      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
-        <div class="p-6">
-          <p class="text-gray-300 text-sm mb-4">
-            I served as a campus volunteer during my school's 30th anniversary celebration, welcoming returning alumni, guiding visitors, and helping the event run smoothly. Seeing alumni from different generations share their memories reminded me that a school is a living community sustained by everyone who passes through it.
-          </p>
-          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
-            "Service is leadership in its quietest form. Giving back felt not like work, but like a small thank-you to the place that shaped me."
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎯 Event Coordination</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">💛 Community Service</span>
-          </div>
-          <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
-              <div class="h-40 bg-gray-700 relative overflow-hidden">
-                <img src="school-open-day.jpeg" alt="School 30th Anniversary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              </div>
-              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">School 30th Anniversary Open Day</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 6: Cross-School Seminar (right — alternating) -->
-      <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
-        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
-        <div class="md:w-1/2 md:pl-16">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🎙️</div>
-            <div>
               <h3 class="text-white font-bold text-xl">Organizer &amp; Host</h3>
               <p class="text-[#F8C4B4] text-sm">Cross-School Academic Experience Sharing Seminar</p>
               <p class="text-gray-400 text-xs mt-1">6 Senior Students from 6 High Schools</p>
             </div>
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🎙️</div>
           </div>
         </div>
         <div class="hidden md:block md:w-1/2"></div>
@@ -583,12 +649,29 @@ tailwind.config = {
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
             "Leadership is not about having a title or waiting for permission — it is about seeing a need, bringing the right people together, and creating a space where others can grow."
           </p>
+          <!-- Big-number panel -->
+          <div class="bg-gray-700/50 rounded-lg p-4 mb-4 flex items-center justify-center gap-6 md:gap-12 flex-wrap">
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">6</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">High Schools</p>
+            </div>
+            <div class="w-px h-12 bg-gray-600 hidden sm:block"></div>
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">6</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Senior Speakers</p>
+            </div>
+            <div class="w-px h-12 bg-gray-600 hidden sm:block"></div>
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">50+</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Junior Students</p>
+            </div>
+          </div>
           <h4 class="text-white font-semibold mb-3 text-sm">Impact</h4>
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🏫 6 High Schools Represented</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">👥 6 Senior Speakers Recruited</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🏫 6 High Schools · 6 Speakers</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">👥 50+ Junior Students Attended</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">📋 Full Agenda &amp; Logistics</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎤 Hosted &amp; Facilitated</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎤 Solo Hosted &amp; Facilitated</span>
           </div>
           <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -597,6 +680,49 @@ tailwind.config = {
                 <img src="seminar.png" alt="Cross-School Seminar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Cross-School Experience Sharing Seminar</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6: Campus Volunteer (right — alternating) -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <div class="md:w-1/2 md:pl-16">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🏫</div>
+            <div>
+              <h3 class="text-white font-bold text-xl">Campus Volunteer</h3>
+              <p class="text-[#F8C4B4] text-sm">School 30th Anniversary</p>
+              <p class="text-gray-400 text-xs mt-1">Shenzhen Nanshan Foreign Language School</p>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+        <div class="p-6">
+          <p class="text-gray-300 text-sm mb-4">
+            I served as a campus volunteer during my school's 30th anniversary celebration, welcoming returning alumni, guiding visitors, and helping the event run smoothly. It was not a leadership role with a title — no one reported to me, no crisis demanded my intervention. But standing there, watching alumni from different generations share laughter and memories, I understood something profound: a school is not just a building, it is a living community woven together by everyone who has ever passed through its halls.
+          </p>
+          <p class="text-gray-300 text-sm mb-4">
+            Giving back that day did not feel like work. It felt like a quiet thank-you to the place that shaped me. I realised that the truest form of leadership does not always come with a badge — sometimes it is simply showing up, holding the door, and making someone feel welcome. In a world that celebrates the loud and the visible, there is power in the quiet, steady act of service.
+          </p>
+          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
+            "Service is leadership in its quietest form. Not every contribution needs applause — some of the most meaningful ones happen in the background, unseen but deeply felt."
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎯 Event Coordination</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">💛 Community Service</span>
+          </div>
+          <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-40 bg-gray-700 relative overflow-hidden">
+                <img src="school-open-day.jpeg" alt="School 30th Anniversary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">School 30th Anniversary Open Day</span>
             </a>
           </div>
         </div>
@@ -637,6 +763,7 @@ tailwind.config = {
               </div>
             </div>
           </div>
+          <p class="text-gray-500 text-xs text-center mt-4">Screenshots from Grade 10 — my first time reaching out to inquire about scholarship opportunities at UAlberta</p>
         </div>
       </div>
     </div>
@@ -741,6 +868,31 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// ===== NAV ACTIVE STATE (scroll spy — based on section position) =====
+const navLinks = document.querySelectorAll('.nav-link');
+const sectionIds = ['home', 'about', 'academics', 'achievements', 'experience'];
+
+function updateActiveNav() {
+  let current = sectionIds[0];
+  sectionIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top;
+      if (top < 200) current = id; // section top is near/above navbar
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('text-[#F8C4B4]', 'border-[#F8C4B4]');
+    link.classList.add('text-gray-400', 'border-transparent');
+  });
+  const activeLink = document.querySelector(`.nav-link[href="#${current}"]`);
+  if (activeLink) {
+    activeLink.classList.remove('text-gray-400', 'border-transparent');
+    activeLink.classList.add('text-[#F8C4B4]', 'border-[#F8C4B4]');
+  }
+}
+window.addEventListener('scroll', updateActiveNav);
+
 // ===== SCROLL REVEAL =====
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -778,11 +930,12 @@ document.getElementById('tech-marquee').innerHTML = techItems.map(([i, l]) => cr
 
 // Honors
 const honorItems = [
-  ['🥇', 'SMC 2024 Gold Certificate'], ['📝', 'CS Revision Note Co-author'],
-  ['🌍', '400+ Downloads Worldwide'], ['✅', 'Mark Scheme Error Fixed'],
-  ['🎓', 'IELTS Club Founder'], ['🤝', 'WLSA Conference Volunteer'],
-  ['🥇', 'SMC 2024 Gold Certificate'], ['📝', 'CS Revision Note Co-author'],
-  ['🌍', '400+ Downloads Worldwide'], ['✅', 'Mark Scheme Error Fixed'],
+  ['🥇', 'SMC 2024 Gold Certificate'], ['📝', 'CS Revision · 400+ Downloads'],
+  ['🌍', '10+ Countries · Mark Scheme Fixed'], ['🎓', 'IELTS Club · 4 Peer Tutors'],
+  ['🤝', 'WLSA · 20+ Top 50 Universities'], ['🇨🇳🇺🇸', 'National Youth Ambassador'],
+  ['📋', 'Class Committee Representative'], ['🏫', 'Seminar · 6 Schools · 50+ Attendees'],
+  ['🥇', 'SMC 2024 Gold Certificate'], ['📝', 'CS Revision · 400+ Downloads'],
+  ['🌍', '10+ Countries · Mark Scheme Fixed'], ['🎓', 'IELTS Club · 4 Peer Tutors'],
 ];
 document.getElementById('honors-marquee').innerHTML = honorItems.map(([i, l]) => createCard(i, l)).join('');
 
