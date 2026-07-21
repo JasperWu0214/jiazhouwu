@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hi! I'm JiaZhou Wu</title>
-<meta name="description" content="A showcase of JiaZhou Wu's skills, achievements and experience">
+<title>Hi! I'm Jiazhou Wu</title>
+<meta name="description" content="A showcase of Jiazhou Wu's skills, achievements and experience">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -56,6 +56,51 @@ tailwind.config = {
     color: #F8C4B4;
   }
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* ===== NAV FALLBACK =====
+     Prevent the browser's default purple visited-link style from flashing
+     before Tailwind finishes generating its utility styles. */
+  #navbar,
+  #navbar:focus,
+  #navbar:focus-visible,
+  #navbar:focus-within,
+  #navbar > div {
+    border: 0 !important;
+    outline: 0 !important;
+  }
+  #navbar a,
+  #navbar a:visited {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #navbar a:focus,
+  #navbar a:focus-visible,
+  #navbar button:focus,
+  #navbar button:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  #navbar .nav-link,
+  #navbar .nav-link:visited,
+  #mobile-menu a,
+  #mobile-menu a:visited {
+    color: #9ca3af;
+  }
+  #navbar .nav-link {
+    border: 0;
+    border-bottom: 2px solid transparent;
+  }
+  #navbar .nav-link:hover,
+  #navbar .nav-link.nav-active,
+  #mobile-menu a:hover {
+    color: #F8C4B4;
+  }
+  #navbar .nav-link:hover,
+  #navbar .nav-link.nav-active {
+    border-bottom-color: #F8C4B4;
+  }
 
   /* ===== SECTION DIVIDERS (from original) ===== */
   section {
@@ -116,7 +161,7 @@ tailwind.config = {
 <!-- ================================================ -->
 <!--  NAVBAR — exact class match to original          -->
 <!-- ================================================ -->
-<nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out px-4 md:px-8 lg:px-16 bg-transparent py-6">
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out px-4 md:px-8 lg:px-16 bg-transparent py-6" style="border:0;outline:0;">
   <div class="container mx-auto flex justify-between items-center">
     <!-- Logo -->
     <a href="#home" class="flex items-center">
@@ -154,7 +199,7 @@ tailwind.config = {
   <div class="container mx-auto px-4 md:px-6 py-20">
     <div class="text-center">
       <h1 class="text-6xl md:text-8xl font-bold mb-8 mt-8 reveal">
-        Hi! I'm <span class="gradient-text">JiaZhou Wu</span>
+        Hi! I'm <span class="gradient-text">Jiazhou Wu</span>
       </h1>
       <div class="text-2xl md:text-4xl text-gray-300 max-w-4xl mx-auto mb-10 reveal">
         A <span id="typewriter" class="text-[#F8C4B4] typewriter-cursor"></span>
@@ -178,7 +223,7 @@ tailwind.config = {
     <!-- Photo -->
     <div class="flex justify-center reveal">
       <div class="relative w-72 h-72 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-[#F8C4B4] glow">
-        <img src="seminar.png" alt="JiaZhou Wu" class="w-full h-full object-cover" />
+        <img src="seminar.png" alt="Jiazhou Wu" class="w-full h-full object-cover" />
       </div>
     </div>
     <!-- Text -->
@@ -425,50 +470,87 @@ tailwind.config = {
       </div>
 
       <!-- Detail card for IELTS Club -->
-      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
-        <div class="p-6">
+      <div class="relative z-[1] bg-gray-800 rounded-2xl overflow-hidden shadow-xl max-w-5xl mx-auto reveal border border-gray-700/60">
+        <div class="p-5 sm:p-7 md:p-8">
           <p class="text-gray-300 text-sm mb-4">
             After noticing that some classmates could not afford IELTS preparation materials, I served as the club's Co-President and lecturer for its Listening section. I helped coordinate four peer tutors and apply for school funding to purchase resources for everyone. Beyond teaching Listening lectures, I wrote a blog that collected free IELTS study materials and courseware in one place, making quality test preparation more accessible.
           </p>
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
             "Leadership is not about authority — it is about ensuring equal opportunity and using your own effort to lift others up."
           </p>
-          <h4 class="text-white font-semibold mb-3 text-sm">Highlights</h4>
-          <!-- Score Improvement — visual showdown -->
-          <div class="bg-gray-700/50 rounded-lg p-4 mb-4 flex items-center justify-center gap-4 md:gap-8 flex-wrap">
+          <h4 class="text-white font-semibold mb-3 text-sm text-center">Highlights</h4>
+          <!-- Score Improvement — primary visual highlight -->
+          <div class="max-w-3xl mx-auto bg-gray-700/60 rounded-xl border border-[#F8C4B4]/30 p-5 sm:p-7 mb-4 flex items-center justify-center gap-7 sm:gap-12">
             <div class="text-center">
               <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Before</p>
-              <p class="text-4xl md:text-5xl font-bold text-gray-400">5.5</p>
+              <p class="text-5xl md:text-6xl font-bold text-gray-300">5.5</p>
               <p class="text-xs text-gray-500 mt-1">Listening</p>
             </div>
-            <div class="text-3xl md:text-4xl font-bold text-[#F8C4B4]">→</div>
+            <div class="text-4xl md:text-5xl font-bold text-[#F8C4B4]" aria-hidden="true">→</div>
             <div class="text-center">
               <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">After 3 Months</p>
-              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">7.5</p>
+              <p class="text-5xl md:text-6xl font-bold text-[#F8C4B4]">7.5</p>
               <p class="text-xs text-[#F8C4B4] mt-1">Listening</p>
             </div>
           </div>
-          <p class="text-gray-500 text-xs text-center -mt-2 mb-4">Achieved by one of our club members after 3 months of study</p>
-          <div class="flex flex-wrap gap-2 mb-4">
+          <p class="text-gray-400 text-xs text-center -mt-2 mb-5">One club member's documented result during a three-month study period</p>
+          <div class="flex flex-wrap justify-center gap-2 mb-6">
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">👥 4 Peer Tutors</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">📚 Free Resources</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">💰 School Funding Secured</span>
           </div>
-          <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
-              <div class="h-40 bg-gray-700 relative overflow-hidden">
-                <img src="ielts-101.jpeg" alt="IELTS 101 — Our First Class" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="max-w-3xl mx-auto mt-7 space-y-5">
+            <div class="rounded-lg border border-gray-600/50 bg-gray-700/30 p-4">
+              <div class="text-center mb-3">
+                <h4 class="text-white font-semibold text-sm">Documented Listening Progress</h4>
+                <p class="text-gray-400 text-xs mt-1">Select either record to view the full screenshot.</p>
               </div>
-              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">IELTS 101 — Our First Class</span>
-            </a>
-            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
-              <div class="h-40 bg-gray-700 relative overflow-hidden">
-                <img src="ielts-slide.png" alt="Sample Lecture Slide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div class="grid grid-cols-2 gap-3">
+                <button type="button" class="text-left bg-gray-900/60 rounded-lg overflow-hidden border border-gray-600/60 hover:border-[#F8C4B4]/70 transition-colors duration-300 group">
+                  <div class="h-24 sm:h-28 bg-white relative overflow-hidden">
+                    <img src="ielts-listening-5.5-before-redacted.png" alt="IELTS Listening score record before — band 5.5" loading="lazy" class="w-full h-full object-contain cursor-zoom-in" />
+                    <span class="absolute top-2 left-2 bg-gray-950/85 text-gray-200 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider">Before</span>
+                  </div>
+                  <span class="min-h-[40px] p-2.5 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-300">Score record</span>
+                    <strong class="text-base text-gray-300">5.5</strong>
+                  </span>
+                </button>
+                <button type="button" class="text-left bg-gray-900/60 rounded-lg overflow-hidden border border-[#F8C4B4]/40 hover:border-[#F8C4B4] transition-colors duration-300 group">
+                  <div class="h-24 sm:h-28 bg-white relative overflow-hidden">
+                    <img src="ielts-listening-7.5-after-redacted.png" alt="IELTS Listening score record after — band 7.5" loading="lazy" class="w-full h-full object-contain cursor-zoom-in" />
+                    <span class="absolute top-2 left-2 bg-[#F8C4B4] text-gray-950 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">After</span>
+                  </div>
+                  <span class="min-h-[40px] p-2.5 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-300">Score record</span>
+                    <strong class="text-base text-[#F8C4B4]">7.5</strong>
+                  </span>
+                </button>
               </div>
-              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Sample Lecture Slide</span>
-            </a>
+            </div>
+
+            <div class="rounded-lg border border-gray-600/50 bg-gray-700/30 p-4">
+              <div class="text-center mb-3">
+                <h4 class="text-white font-semibold text-sm">Program Media</h4>
+                <p class="text-gray-400 text-xs mt-1">Classroom teaching and listening-course materials.</p>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <a href="#" class="block bg-gray-900/60 rounded-lg overflow-hidden border border-gray-600/60 hover:border-[#F8C4B4]/50 transition-colors duration-300 group">
+                  <div class="h-24 sm:h-28 bg-gray-700 relative overflow-hidden">
+                    <img src="ielts-101.jpeg" alt="IELTS 101 — Our First Class" loading="lazy" class="w-full h-full object-cover cursor-zoom-in" />
+                  </div>
+                  <span class="min-h-[40px] p-2.5 flex items-center text-xs text-gray-300 group-hover:text-[#F8C4B4] transition-colors">IELTS 101 — First Class</span>
+                </a>
+                <a href="#" class="block bg-gray-900/60 rounded-lg overflow-hidden border border-gray-600/60 hover:border-[#F8C4B4]/50 transition-colors duration-300 group">
+                  <div class="h-24 sm:h-28 bg-gray-700 relative overflow-hidden">
+                    <img src="ielts-slide.png" alt="Sample Lecture Slide" loading="lazy" class="w-full h-full object-cover cursor-zoom-in" />
+                  </div>
+                  <span class="min-h-[40px] p-2.5 flex items-center text-xs text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Listening Lecture Slide</span>
+                </a>
+              </div>
+            </div>
           </div>
+          <p class="max-w-3xl mx-auto text-gray-500 text-[11px] leading-relaxed mt-3 text-center">Supporting evidence of one member's progress; it is not presented as proof that the club alone caused the improvement.</p>
         </div>
       </div>
 
@@ -867,13 +949,15 @@ tailwind.config = {
 <!-- ================================================ -->
 <footer class="bg-[#030a14] py-8">
   <div class="container mx-auto px-4 md:px-6 text-center">
-    <p class="text-gray-400 text-sm">&copy; 2026 JiaZhou Wu. All rights reserved.</p>
+    <p class="text-gray-400 text-sm">&copy; 2026 Jiazhou Wu. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
 // ===== LIGHTBOX =====
+let lightboxScrollPosition = 0;
 function openLightbox(src) {
+  lightboxScrollPosition = window.scrollY;
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox').classList.remove('hidden');
   document.body.style.overflow = 'hidden';
@@ -881,6 +965,7 @@ function openLightbox(src) {
 function closeLightbox() {
   document.getElementById('lightbox').classList.add('hidden');
   document.body.style.overflow = '';
+  window.scrollTo(0, lightboxScrollPosition);
 }
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
@@ -888,6 +973,7 @@ document.addEventListener('keydown', (e) => {
 // Attach click to all images inside sections, except navbar logo
 document.querySelectorAll('img').forEach(img => {
   img.addEventListener('click', (e) => {
+    e.preventDefault();
     e.stopPropagation();
     openLightbox(img.src);
   });
@@ -974,16 +1060,19 @@ function updateActiveNav() {
     }
   });
   navLinks.forEach(link => {
+    link.classList.remove('nav-active');
     link.classList.remove('text-[#F8C4B4]', 'border-[#F8C4B4]');
     link.classList.add('text-gray-400', 'border-transparent');
   });
   const activeLink = document.querySelector(`.nav-link[href="#${current}"]`);
   if (activeLink) {
+    activeLink.classList.add('nav-active');
     activeLink.classList.remove('text-gray-400', 'border-transparent');
     activeLink.classList.add('text-[#F8C4B4]', 'border-[#F8C4B4]');
   }
 }
 window.addEventListener('scroll', updateActiveNav);
+updateActiveNav();
 
 // ===== SCROLL REVEAL =====
 const observer = new IntersectionObserver((entries) => {

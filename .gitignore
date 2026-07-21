@@ -1,2 +1,6 @@
 # Local Netlify folder
 .netlify
+
+# Private, unredacted IELTS score screenshots
+ielts-listening-5.5-before.jpeg
+ielts-listening-7.5-after.jpeg
