@@ -148,6 +148,18 @@ tailwind.config = {
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* ===== FEEDBACK CAROUSEL ===== */
+  .feedback-carousel {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #F8C4B4 rgba(31, 41, 55, 0.8);
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .feedback-carousel::-webkit-scrollbar {
+    height: 8px;
+  }
 </style>
 </head>
 <body class="text-white min-h-screen bg-gradient-to-b from-[#103161] via-[#0d284f] to-[#051121] overflow-x-hidden antialiased" style="font-family:'Segoe UI',system-ui,-apple-system,sans-serif;font-size:18px;">
@@ -232,7 +244,7 @@ tailwind.config = {
         As a high school student at Shenzhen Nanshan Foreign Language Senior High School, I am passionate about Computer Science and leveraging technology to solve real-world problems. My academic journey has been driven by curiosity, persistence, and a commitment to truth.
       </p>
       <p class="text-gray-300 text-lg">
-        Beyond academics, I co-led the IELTS Club as Co-President and taught its Listening section to expand access to learning resources, contributed to and helped maintain a widely used Cambridge CS revision guide, and served as a student ambassador in international exchange programs. I believe leadership is not about authority — it is about lifting others up and making yourself replaceable.
+        Beyond academics, I co-led the IELTS Club as Co-President and taught its Listening section to expand access to learning resources, contributed to and helped maintain a widely used Cambridge International AS &amp; A Level Computer Science revision guide, and served as a student ambassador in international exchange programs. I believe leadership is not about authority — it is about lifting others up and making yourself replaceable.
       </p>
       <p class="text-gray-300 text-lg">
         I enjoy working out, listening to music, and exploring the latest technology. My goal is to study Computer Science and contribute my own piece to the vast universe of knowledge.
@@ -253,20 +265,16 @@ tailwind.config = {
 
   <!-- Academic highlights -->
   <div class="bg-gray-800/80 rounded-lg p-6 md:p-8 max-w-5xl mx-auto mb-14 shadow-lg reveal">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
       <div>
         <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">3.88</p>
         <p class="text-xs text-gray-400 mt-2 uppercase tracking-wider">Cumulative GPA</p>
       </div>
-      <div class="lg:border-l border-gray-700">
+      <div class="sm:border-l border-gray-700">
         <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">4.00</p>
         <p class="text-xs text-gray-400 mt-2 uppercase tracking-wider">Latest Semester</p>
       </div>
-      <div class="lg:border-l border-gray-700">
-        <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">+0.24</p>
-        <p class="text-xs text-gray-400 mt-2 uppercase tracking-wider">GPA Growth</p>
-      </div>
-      <div class="lg:border-l border-gray-700">
+      <div class="sm:border-l border-gray-700">
         <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">A*A*A*</p>
         <p class="text-xs text-gray-400 mt-2 uppercase tracking-wider">Predicted A Level</p>
       </div>
@@ -319,7 +327,7 @@ tailwind.config = {
               <div class="p-4"><p class="text-white font-semibold text-sm">SMC Gold</p><p class="text-gray-400 text-xs mt-1">2024</p></div>
             </div>
             <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg group">
-              <div class="h-36 bg-gray-700 overflow-hidden"><img src="as-level-result.png" alt="Cambridge AS-Level Results" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" /></div>
+              <div class="h-36 bg-gray-700 overflow-hidden"><img src="as-level-result.png" alt="Cambridge International AS Level Results" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" /></div>
               <div class="p-4"><p class="text-white font-semibold text-sm">AS Level</p><p class="text-gray-400 text-xs mt-1">Achieved: three a grades</p></div>
             </div>
           </div>
@@ -550,7 +558,6 @@ tailwind.config = {
               </div>
             </div>
           </div>
-          <p class="max-w-3xl mx-auto text-gray-500 text-[11px] leading-relaxed mt-3 text-center">Supporting evidence of one member's progress; it is not presented as proof that the club alone caused the improvement.</p>
         </div>
       </div>
 
@@ -562,7 +569,7 @@ tailwind.config = {
             <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">📝</div>
             <div>
               <h3 class="text-white font-bold text-xl">Contributor</h3>
-              <p class="text-[#F8C4B4] text-sm">Cambridge AS &amp; A Level CS Revision Note</p>
+              <p class="text-[#F8C4B4] text-sm">Cambridge International AS &amp; A Level Computer Science Revision Note</p>
               <p class="text-gray-400 text-xs mt-1">2-year project</p>
             </div>
           </div>
@@ -573,7 +580,7 @@ tailwind.config = {
       <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
-            Realising existing notes needed further development, I reached out to their senior author and spent two years contributing corrections, explanations, and new material while helping maintain the revision guide. I spotted an issue in the official mark scheme — the exam board initially rejected my report, but I persisted with evidence until a later mark scheme included the additional answer. I then trained a junior to help maintain the guide, supporting its continued use after I moved on.
+            Realising existing notes needed further development, I reached out to the senior author and spent two years contributing corrections, explanations, and new material while helping maintain the revision guide. Alongside this work, I collected Computer Science exam-preparation resources, uploaded them to Google Drive, incorporated the files into the revision note, and shared the complete collection free of charge through social media. I then trained a junior student to help maintain the guide, supporting its continued use after I moved on.
           </p>
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
             "With commitment to truth, even a small individual action can make a huge difference to a global community — and true leadership means making myself replaceable."
@@ -599,8 +606,7 @@ tailwind.config = {
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌍 400+ Downloads Worldwide</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌏 Students in 10+ Countries</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">📚 135 Curated AS CS Files</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">✅ Mark Scheme Error Fixed</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">📚 135 Curated Cambridge International AS Level Computer Science Files</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🔄 Successor Trained</span>
           </div>
 
@@ -609,17 +615,17 @@ tailwind.config = {
             <div class="flex items-end justify-between gap-4 mb-3">
               <div>
                 <p class="text-[#F8C4B4] text-xs font-semibold uppercase tracking-wider">Our Published Resource</p>
-                <h4 class="text-white font-semibold text-lg mt-1">Cambridge AS Level Computer Science Revision Note</h4>
+                <h4 class="text-white font-semibold text-lg mt-1">Cambridge International AS &amp; A Level Computer Science Revision Note</h4>
               </div>
               <span class="shrink-0 bg-gray-700/70 text-gray-300 px-3 py-1 rounded-full text-xs font-medium">174 pages</span>
             </div>
             <p class="text-gray-400 text-sm mb-4">
               Browse the complete revision note below, or click the preview to open the full PDF in a new tab.
             </p>
-            <a href="AL%20CS%20MS%202026%20PDF%20Version.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the full Cambridge AS Level Computer Science revision note PDF" class="group block relative bg-white rounded-md overflow-hidden border border-gray-600 hover:border-[#F8C4B4] transition-colors">
-              <object data="AL%20CS%20MS%202026%20PDF%20Version.pdf#page=1&amp;view=FitH&amp;toolbar=0&amp;navpanes=0" type="application/pdf" class="w-full h-[520px] pointer-events-none" aria-label="Preview of the Cambridge AS Level Computer Science revision note">
+            <a href="AL%20CS%20MS%202026%20PDF%20Version.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the full Cambridge International AS &amp; A Level Computer Science revision note PDF" class="group block relative bg-white rounded-md overflow-hidden border border-gray-600 hover:border-[#F8C4B4] transition-colors">
+              <object data="AL%20CS%20MS%202026%20PDF%20Version.pdf#page=1&amp;view=FitH&amp;toolbar=0&amp;navpanes=0" type="application/pdf" class="w-full h-[520px] pointer-events-none" aria-label="Preview of the Cambridge International AS &amp; A Level Computer Science revision note">
                 <div class="h-[520px] flex flex-col items-center justify-center text-gray-800 px-6 text-center">
-                  <p class="font-semibold text-lg">Cambridge AS Level Computer Science</p>
+                  <p class="font-semibold text-lg">Cambridge International AS &amp; A Level Computer Science</p>
                   <p class="text-sm mt-2">PDF preview unavailable. Click to open the full revision note.</p>
                 </div>
               </object>
@@ -661,7 +667,7 @@ tailwind.config = {
                 <div class="w-10 h-10 rounded-full bg-[#F8C4B4]/20 flex items-center justify-center text-lg shrink-0">🗂️</div>
                 <div>
                   <p class="text-[#F8C4B4] text-xs font-semibold uppercase tracking-wider">Curated Resource Library</p>
-                  <h4 class="text-white font-semibold text-lg mt-0.5">Cambridge AS Computer Science Materials</h4>
+                  <h4 class="text-white font-semibold text-lg mt-0.5">Cambridge International AS Level Computer Science Materials</h4>
                   <p class="text-gray-400 text-sm mt-2 max-w-2xl">
                     I collected, organized, and shared these materials through social media, arranging past papers, mark schemes, examiner reports, topical questions, the syllabus, and supporting guides by paper, year, and exam session.
                   </p>
@@ -673,7 +679,7 @@ tailwind.config = {
               </div>
             </div>
 
-            <a href="https://drive.google.com/drive/folders/1C1RXjXPq_yIN9hchMCC6GD8uYkCHQmTK?usp=sharing" target="_blank" rel="noopener noreferrer" class="mb-4 inline-flex items-center justify-center gap-2 rounded-md bg-[#F8C4B4] px-4 py-2.5 text-sm font-bold text-gray-950 hover:bg-white transition-colors" aria-label="Open the complete Cambridge AS Computer Science resource library in Google Drive">
+            <a href="https://drive.google.com/drive/folders/1C1RXjXPq_yIN9hchMCC6GD8uYkCHQmTK?usp=sharing" target="_blank" rel="noopener noreferrer" class="mb-4 inline-flex items-center justify-center gap-2 rounded-md bg-[#F8C4B4] px-4 py-2.5 text-sm font-bold text-gray-950 hover:bg-white transition-colors" aria-label="Open the complete Cambridge International AS Level Computer Science resource library in Google Drive">
               Open the complete Google Drive folder ↗
             </a>
 
@@ -748,76 +754,51 @@ tailwind.config = {
             </div>
             <span class="p-4 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Reddit Community Response · Full post, discussion, and contribution acknowledgement · Click to view full image</span>
           </a>
-          <div class="grid grid-cols-1 sm:grid-cols-1 gap-4">
-            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
-              <div class="h-40 bg-gray-700 relative overflow-hidden">
-                <img src="feedback.png" alt="Student Feedback" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+          <div class="mt-6">
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <div>
+                <p class="text-[#F8C4B4] text-xs font-semibold uppercase tracking-wider">Learner Responses</p>
+                <h4 class="text-white font-semibold text-lg mt-1">Student Feedback</h4>
               </div>
-              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Student Feedback We Found</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cambridge Appeal — Sub-entry under CS Revision Note -->
-      <div class="bg-gray-800/60 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal border-l-4 border-[#F8C4B4]">
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-2xl">📜</span>
-            <div>
-              <h3 class="text-white font-bold text-lg">Cambridge Mark Scheme Correction</h3>
-              <p class="text-[#F8C4B4] text-sm">Formal appeal submitted to Cambridge International Examinations — <span class="text-green-400 font-semibold">Accepted ✓</span></p>
+              <div class="flex items-center gap-2 shrink-0">
+                <button type="button" onclick="scrollFeedback(-1)" aria-label="View previous student feedback" class="w-9 h-9 rounded-full border border-gray-600 bg-gray-800 text-[#F8C4B4] hover:bg-[#F8C4B4] hover:text-gray-950 transition-colors flex items-center justify-center text-xl">‹</button>
+                <button type="button" onclick="scrollFeedback(1)" aria-label="View next student feedback" class="w-9 h-9 rounded-full border border-gray-600 bg-gray-800 text-[#F8C4B4] hover:bg-[#F8C4B4] hover:text-gray-950 transition-colors flex items-center justify-center text-xl">›</button>
+              </div>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">Swipe or use the arrows to browse all five responses. Click any image to enlarge it.</p>
+            <div id="feedback-carousel" class="feedback-carousel flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4" role="region" aria-label="Student feedback gallery">
+              <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
+                <div class="h-[360px] sm:h-[430px] p-3 flex items-center justify-center">
+                  <img src="feedback.png" alt="Student feedback screenshot 1 of 5" loading="lazy" class="w-full h-full object-contain" />
+                </div>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 1 of 5</figcaption>
+              </figure>
+              <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
+                <div class="h-[360px] sm:h-[430px] p-3 flex items-center justify-center">
+                  <img src="6c54365cd2dbed76c3b9f00c02e84633.png" alt="Student feedback screenshot 2 of 5" loading="lazy" class="w-full h-full object-contain" />
+                </div>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 2 of 5</figcaption>
+              </figure>
+              <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
+                <div class="h-[360px] sm:h-[430px] p-3 flex items-center justify-center">
+                  <img src="7052f9039daf4c89b04c21a6afe43547.png" alt="Student feedback screenshot 3 of 5" loading="lazy" class="w-full h-full object-contain" />
+                </div>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 3 of 5</figcaption>
+              </figure>
+              <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
+                <div class="h-[360px] sm:h-[430px] p-3 flex items-center justify-center">
+                  <img src="63659eadabd12e01145cc25b4e7f801f.jpg" alt="Student feedback screenshot 4 of 5" loading="lazy" class="w-full h-full object-contain" />
+                </div>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 4 of 5</figcaption>
+              </figure>
+              <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
+                <div class="h-[360px] sm:h-[430px] p-3 flex items-center justify-center">
+                  <img src="a8e988f72889fa747f9fe0741df83e8a.jpg" alt="Student feedback screenshot 5 of 5" loading="lazy" class="w-full h-full object-contain" />
+                </div>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 5 of 5</figcaption>
+              </figure>
             </div>
           </div>
-
-          <p class="text-gray-300 text-sm mb-4">
-            While writing the CS revision guide, I noticed the mark scheme gave <span class="text-red-400 font-semibold">"2"</span> as the answer to "State the number of transistors in each cell of flash memory." I believed <span class="text-green-400 font-semibold">"1"</span> should also be accepted — a flash cell is a single floating-gate MOSFET, not two transistors. I submitted evidence to Cambridge. My first appeal was dismissed. I gathered stronger documentation and resubmitted; two months later, they added "1" as an accepted answer.
-          </p>
-
-          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
-            "Rigour is not about being right. It is about caring enough about truth to be uncomfortable until it is found."
-          </p>
-
-          <!-- Screenshots -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
-            <div class="bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300">
-              <p class="text-gray-400 text-xs px-3 pt-2">📷 Question Paper</p>
-              <img src="screenshot%20of%20the%20question.png" alt="Question Paper" class="w-full object-contain max-h-56" />
-            </div>
-            <div class="bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300">
-              <p class="text-gray-400 text-xs px-3 pt-2">📷 Original Mark Scheme (Answer: 2)</p>
-              <img src="screenshot%20of%20the%20mark%20scheme.png" alt="Mark Scheme" class="w-full object-contain max-h-56" />
-            </div>
-          </div>
-
-          <!-- Wikipedia + Email -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
-            <div class="bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300">
-              <p class="text-gray-400 text-xs px-3 pt-2">📷 Wikipedia Evidence</p>
-              <img src="screenshot%20of%20the%20Wikipedia%20statement%20page.png" alt="Wikipedia Source" class="w-full object-contain max-h-56" />
-            </div>
-            <div class="bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300">
-              <p class="text-gray-400 text-xs px-3 pt-2">📷 Email Correspondence with Cambridge</p>
-              <img src="screenshot%20of%20appeal%20email.png" alt="Cambridge Email" class="w-full object-contain max-h-56" />
-            </div>
-          </div>
-
-          <!-- Timeline -->
-          <div class="flex flex-wrap items-center gap-2 md:gap-3 text-xs mb-4">
-            <span class="bg-gray-700/50 text-gray-300 px-2 py-1 rounded">Submitted evidence</span>
-            <span class="text-gray-500">→</span>
-            <span class="bg-red-400/20 text-red-400 px-2 py-1 rounded font-semibold">Rejected</span>
-            <span class="text-gray-500">→</span>
-            <span class="bg-gray-700/50 text-gray-300 px-2 py-1 rounded">Resubmitted with stronger evidence</span>
-            <span class="text-gray-500">→</span>
-            <span class="bg-green-400/20 text-green-400 px-2 py-1 rounded font-semibold">Accepted ✓ — "1" added to mark scheme</span>
-          </div>
-
-          <!-- Download -->
-          <a href="Cambridge_Mark_Scheme_Appeal.docx" download class="inline-flex items-center gap-2 bg-[#F8C4B4]/20 hover:bg-[#F8C4B4]/30 text-[#F8C4B4] px-4 py-2 rounded-lg transition-all duration-300 text-sm font-medium">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-            Download Full Appeal (.docx)
-          </a>
         </div>
       </div>
 
@@ -948,7 +929,7 @@ tailwind.config = {
       <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
-            I noticed that junior high school students in my community lacked access to firsthand advice on how to navigate the transition to senior high school and prepare for international exams. Instead of waiting for someone else to bridge that gap, I took the initiative — I reached out across my network, personally invited six senior students from six different high schools, designed the agenda, coordinated schedules, and hosted the entire seminar myself.
+            I noticed that junior high school students in my community lacked access to firsthand advice on how to navigate the transition to senior high school and prepare for the senior high school entrance examination (Zhongkao). Instead of waiting for someone else to bridge that gap, I took the initiative — I contacted my former junior high homeroom teacher to understand students' needs and help coordinate the seminar, reached out across my network, personally invited six senior students from six different high schools, designed the agenda, coordinated schedules, and hosted the entire seminar myself.
           </p>
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
             "Leadership is not about having a title or waiting for permission — it is about seeing a need, bringing the right people together, and creating a space where others can grow."
@@ -1016,7 +997,21 @@ tailwind.config = {
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
             "Service is leadership in its quietest form. Not every contribution needs applause — some of the most meaningful ones happen in the background, unseen but deeply felt."
           </p>
-          <div class="flex flex-wrap gap-2">
+          <div class="bg-gray-700/50 rounded-lg p-4 mb-4 flex items-center justify-center gap-8 md:gap-16 flex-wrap">
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">300+</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Guests Welcomed</p>
+            </div>
+            <div class="w-px h-12 bg-gray-600 hidden sm:block"></div>
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">30th</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">School Anniversary</p>
+            </div>
+          </div>
+          <h4 class="text-white font-semibold mb-3 text-sm">Highlights</h4>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">👥 Welcomed 300+ Guests</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎂 30th Anniversary Celebration</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🎯 Event Coordination</span>
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">💛 Community Service</span>
           </div>
@@ -1058,6 +1053,14 @@ function closeLightbox() {
   document.getElementById('lightbox').classList.add('hidden');
   document.body.style.overflow = '';
   window.scrollTo(0, lightboxScrollPosition);
+}
+function scrollFeedback(direction) {
+  const carousel = document.getElementById('feedback-carousel');
+  if (!carousel) return;
+  carousel.scrollBy({
+    left: direction * Math.max(carousel.clientWidth * 0.8, 280),
+    behavior: 'smooth'
+  });
 }
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
@@ -1204,11 +1207,11 @@ document.getElementById('tech-marquee').innerHTML = techItems.map(([i, l]) => cr
 // Honors
 const honorItems = [
   ['🥇', 'SMC 2024 Gold Certificate'], ['📝', 'CS Revision · 400+ Downloads'],
-  ['🌍', '10+ Countries · Mark Scheme Fixed'], ['🎓', 'IELTS Club · 4 Peer Tutors'],
+  ['🌍', 'CS Resources · 10+ Countries'], ['🎓', 'IELTS Club · 4 Peer Tutors'],
   ['🤝', 'WLSA · 20+ Top 50 Universities'], ['🇨🇳🇺🇸', 'National Youth Ambassador'],
   ['📋', 'Class Committee Representative'], ['🏫', 'Seminar · 6 Schools · 50+ Attendees'],
   ['🥇', 'SMC 2024 Gold Certificate'], ['📝', 'CS Revision · 400+ Downloads'],
-  ['🌍', '10+ Countries · Mark Scheme Fixed'], ['🎓', 'IELTS Club · 4 Peer Tutors'],
+  ['🌍', 'CS Resources · 10+ Countries'], ['🎓', 'IELTS Club · 4 Peer Tutors'],
 ];
 document.getElementById('honors-marquee').innerHTML = honorItems.map(([i, l]) => createCard(i, l)).join('');
 
