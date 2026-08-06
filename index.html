@@ -338,11 +338,6 @@ tailwind.config = {
           <p class="text-gray-300 text-sm mt-3">
             A Gold Certificate in the Senior Mathematical Challenge, three achieved a grades at Cambridge International AS Level, and predicted A*A*A* at A Level demonstrate both analytical strength and consistent academic preparation.
           </p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] px-3 py-1 rounded-full text-sm font-medium">🧠 Analytical Thinking</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] px-3 py-1 rounded-full text-sm font-medium">📈 Consistent Growth</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] px-3 py-1 rounded-full text-sm font-medium">🎯 Academic Discipline</span>
-          </div>
         </div>
       </div>
 
@@ -852,6 +847,12 @@ tailwind.config = {
               </div>
               <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">WLSA University Fair</span>
             </a>
+            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
+              <div class="h-40 bg-gray-700 relative overflow-hidden">
+                <img src="WLSA-event-picture.jpg" alt="2025 WLSA China Conference Tour event display" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">2025 WLSA China Conference Tour</span>
+            </a>
           </div>
         </div>
       </div>
@@ -899,13 +900,25 @@ tailwind.config = {
             <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🤗 Empathy &amp; Connection</span>
           </div>
           <h4 class="text-white font-semibold mb-2 text-sm">Related Media</h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
-              <div class="h-40 bg-gray-700 relative overflow-hidden">
-                <img src="us-china.jpeg" alt="China-U.S. Youth Exchange" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <button type="button" onclick="openLightbox('us-china-welcome.jpg')" aria-label="View the opening welcome ceremony photo" class="text-left bg-gray-700/50 rounded-xl overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/60 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
+              <div class="aspect-[3/2] bg-gray-700 relative overflow-hidden">
+                <img src="us-china-welcome.jpg" alt="Opening welcome ceremony for the 2025 China-U.S. Youth Exchange" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">China-U.S. Youth Exchange</span>
-            </a>
+              <span class="p-4 block">
+                <span class="block text-sm font-semibold text-white group-hover:text-[#F8C4B4] transition-colors">Opening Welcome Ceremony</span>
+                <span class="block text-xs text-gray-400 mt-1">The exchange begins with a school-wide welcome.</span>
+              </span>
+            </button>
+            <button type="button" onclick="openLightbox('us-china.jpeg')" aria-label="View the China-U.S. youth exchange delegation photo" class="text-left bg-gray-700/50 rounded-xl overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/60 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
+              <div class="aspect-[3/2] bg-gray-700 relative overflow-hidden">
+                <img src="us-china.jpeg" alt="Students participating in the 2025 China-U.S. Youth Exchange" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <span class="p-4 block">
+                <span class="block text-sm font-semibold text-white group-hover:text-[#F8C4B4] transition-colors">China–U.S. Youth Exchange Delegation</span>
+                <span class="block text-xs text-gray-400 mt-1">Students connecting across cultures and communities.</span>
+              </span>
+            </button>
           </div>
         </div>
       </div>
