@@ -161,11 +161,8 @@ tailwind.config = {
     height: 8px;
   }
 
-  /* ===== GITHUB CONTRIBUTION CALENDAR ===== */
-  .github-calendar-scroll {
-    scrollbar-width: thin;
-    scrollbar-color: #4b5563 rgba(17, 24, 39, 0.5);
-  }
+  /* ===== GITHUB ACTIVITY ===== */
+  .github-calendar-scroll { scrollbar-width: thin; scrollbar-color: #4b5563 rgba(17, 24, 39, 0.5); }
   .github-calendar {
     display: grid;
     grid-template-rows: repeat(7, 12px);
@@ -175,27 +172,19 @@ tailwind.config = {
     width: max-content;
     min-height: 102px;
   }
-  .github-day,
-  .github-legend-cell {
+  .github-day, .github-legend-cell {
     width: 12px;
     height: 12px;
     border-radius: 2px;
     border: 1px solid rgba(240, 246, 252, 0.06);
   }
-  .github-day[data-level="0"],
-  .github-legend-cell[data-level="0"] { background: #161b22; }
-  .github-day[data-level="1"],
-  .github-legend-cell[data-level="1"] { background: #0e4429; }
-  .github-day[data-level="2"],
-  .github-legend-cell[data-level="2"] { background: #006d32; }
-  .github-day[data-level="3"],
-  .github-legend-cell[data-level="3"] { background: #26a641; }
-  .github-day[data-level="4"],
-  .github-legend-cell[data-level="4"] { background: #39d353; }
-  .github-day:hover {
-    outline: 1px solid rgba(248, 196, 180, 0.9);
-    outline-offset: 1px;
-  }
+  .github-day[data-level="0"], .github-legend-cell[data-level="0"] { background: #161b22; }
+  .github-day[data-level="1"], .github-legend-cell[data-level="1"] { background: #0e4429; }
+  .github-day[data-level="2"], .github-legend-cell[data-level="2"] { background: #006d32; }
+  .github-day[data-level="3"], .github-legend-cell[data-level="3"] { background: #26a641; }
+  .github-day[data-level="4"], .github-legend-cell[data-level="4"] { background: #39d353; }
+  .github-day:hover { outline: 1px solid #F8C4B4; outline-offset: 1px; }
+
 </style>
 </head>
 <body class="text-white min-h-screen bg-gradient-to-b from-[#103161] via-[#0d284f] to-[#051121] overflow-x-hidden antialiased" style="font-family:'Segoe UI',system-ui,-apple-system,sans-serif;font-size:18px;">
@@ -283,7 +272,7 @@ tailwind.config = {
         As a high school student at Shenzhen Nanshan Foreign Language Senior High School, I am passionate about Computer Science and leveraging technology to solve real-world problems. My academic journey has been driven by curiosity, persistence, and a commitment to truth.
       </p>
       <p class="text-gray-300 text-lg">
-        Beyond academics, I co-led the IELTS Club as Co-President and taught its Listening section to expand access to learning resources, contributed to and helped maintain a widely used Cambridge International AS &amp; A Level Computer Science revision guide, and served as a student ambassador in international exchange programs. I believe leadership is not about authority — it is about lifting others up and making yourself replaceable.
+        Beyond academics, I helped maintain a Cambridge Computer Science revision guide, co-founded an IELTS club that served 60+ students, and led development of AstarLearningHome as its CTO. I am also designing an introductory computing course for incoming high-school students. Across these projects, I have learned to ask what learners need to understand and who may need a different way to access support.
       </p>
       <p class="text-gray-300 text-lg">
         I enjoy working out, listening to music, and exploring the latest technology. My goal is to study Computer Science and contribute my own piece to the vast universe of knowledge.
@@ -316,6 +305,7 @@ tailwind.config = {
       <div class="sm:border-l border-gray-700">
         <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">A*A*A*</p>
         <p class="text-xs text-gray-400 mt-2 uppercase tracking-wider">Predicted A Level</p>
+        <p class="text-xs text-gray-400 mt-1">Mathematics · Physics · Computer Science</p>
       </div>
     </div>
   </div>
@@ -417,66 +407,6 @@ tailwind.config = {
     </div>
   </div>
 
-  <!-- Letters of Recommendation -->
-  <div class="max-w-5xl mx-auto mt-20 reveal">
-    <div class="text-center mb-10">
-      <p class="text-[#F8C4B4] text-sm font-semibold uppercase tracking-wider">Academic Perspectives</p>
-      <h3 class="text-white font-bold text-3xl md:text-4xl mt-2">Letters of Recommendation</h3>
-      <p class="text-gray-300 text-base md:text-lg max-w-3xl mx-auto mt-4">
-        Two educators offer complementary perspectives on my academic ability, intellectual character, and growth as a student.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- CS Teacher Letter -->
-      <article class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg border border-gray-700/70">
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 rounded-full bg-[#F8C4B4]/20 flex items-center justify-center text-xl">💻</div>
-            <div>
-              <p class="text-[#F8C4B4] text-xs font-semibold uppercase tracking-wider">Recommendation I</p>
-              <h4 class="text-white font-bold text-xl">Computer Science Teacher</h4>
-            </div>
-          </div>
-          <p class="text-gray-300 text-sm mb-5">
-            A recommendation from my Computer Science teacher, focusing on my analytical thinking, technical curiosity, problem-solving approach, and persistence in computer science.
-          </p>
-          <a href="recommendation-cs-teacher-sample.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Computer Science teacher recommendation as a full PDF" class="group block relative bg-white rounded-md overflow-hidden border border-gray-600 hover:border-[#F8C4B4] transition-colors">
-            <object data="recommendation-cs-teacher-sample.pdf#view=FitH&amp;toolbar=0&amp;navpanes=0" type="application/pdf" class="w-full h-[420px] pointer-events-none" aria-label="Preview of the Computer Science teacher recommendation">
-              <div class="h-[420px] flex items-center justify-center text-gray-800">This is sample 1</div>
-            </object>
-            <div class="absolute inset-x-0 bottom-0 bg-gray-950/90 text-[#F8C4B4] text-sm font-semibold text-center py-3 group-hover:bg-[#F8C4B4] group-hover:text-gray-950 transition-colors">
-              Click to open full letter ↗
-            </div>
-          </a>
-        </div>
-      </article>
-
-      <!-- Homeroom Teacher Letter -->
-      <article class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg border border-gray-700/70">
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 rounded-full bg-[#F8C4B4]/20 flex items-center justify-center text-xl">🏫</div>
-            <div>
-              <p class="text-[#F8C4B4] text-xs font-semibold uppercase tracking-wider">Recommendation II</p>
-              <h4 class="text-white font-bold text-xl">Homeroom Teacher</h4>
-            </div>
-          </div>
-          <p class="text-gray-300 text-sm mb-5">
-            A recommendation from my homeroom teacher, offering a broader view of my academic consistency, personal character, sense of responsibility, and growth at school.
-          </p>
-          <a href="recommendation-homeroom-teacher-sample.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the homeroom teacher recommendation as a full PDF" class="group block relative bg-white rounded-md overflow-hidden border border-gray-600 hover:border-[#F8C4B4] transition-colors">
-            <object data="recommendation-homeroom-teacher-sample.pdf#view=FitH&amp;toolbar=0&amp;navpanes=0" type="application/pdf" class="w-full h-[420px] pointer-events-none" aria-label="Preview of the homeroom teacher recommendation">
-              <div class="h-[420px] flex items-center justify-center text-gray-800">This is sample 2</div>
-            </object>
-            <div class="absolute inset-x-0 bottom-0 bg-gray-950/90 text-[#F8C4B4] text-sm font-semibold text-center py-3 group-hover:bg-[#F8C4B4] group-hover:text-gray-950 transition-colors">
-              Click to open full letter ↗
-            </div>
-          </a>
-        </div>
-      </article>
-    </div>
-  </div>
 </section>
 
 <!-- ================================================ -->
@@ -486,9 +416,10 @@ tailwind.config = {
   <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center reveal">My Achievements</h2>
 
   <div class="space-y-16 reveal">
-    <!-- Tech Stack -->
+    <!-- Developer Tools & Languages -->
     <div>
-      <h3 class="text-[#F8C4B4] text-lg mb-5 font-semibold text-center">💻 Tech Stack</h3>
+      <h3 class="text-[#F8C4B4] text-lg font-semibold text-center">💻 Developer Tools &amp; Languages</h3>
+      <p class="text-gray-400 text-xs mt-2 mb-5 text-center">Languages &amp; Web · Version Control &amp; Collaboration · Command Line &amp; Editor</p>
       <div class="relative overflow-hidden py-4">
         <div class="flex gap-4 animate-marquee-left" id="tech-marquee">
         </div>
@@ -527,117 +458,15 @@ tailwind.config = {
 
     <div class="space-y-16">
 
-      <!-- Item 1: IELTS Club (right side) -->
-      <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
-        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
-        <!-- left: content -->
-        <div class="md:w-1/2 md:pr-16 md:text-right">
-          <div class="flex items-center gap-3 mb-4 md:justify-end">
-            <div>
-              <h3 class="text-white font-bold text-xl">Co-President &amp; Listening Lecturer</h3>
-              <p class="text-[#F8C4B4] text-sm">IELTS Club</p>
-              <p class="text-gray-400 text-xs mt-1">3 semesters</p>
-            </div>
-            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🎓</div>
-          </div>
-        </div>
-        <!-- right: placeholder -->
-        <div class="hidden md:block md:w-1/2"></div>
-      </div>
-
-      <!-- Detail card for IELTS Club -->
-      <div class="relative z-[1] bg-gray-800 rounded-2xl overflow-hidden shadow-xl max-w-5xl mx-auto reveal border border-gray-700/60">
-        <div class="p-5 sm:p-7 md:p-8">
-          <p class="text-gray-300 text-sm mb-4">
-            After noticing that some classmates could not afford IELTS preparation materials, I served as the club's Co-President and lecturer for its Listening section. I helped coordinate four peer tutors and secure school funding to purchase shared materials so cost would not exclude students from participating. When the first session drew few students, I realized we had planned around what we wanted to offer, not what students felt ready to ask for. With the tutors, I tested more personal outreach before revising the program—a method I now use whenever an assumption fails. Beyond teaching Listening lectures, I wrote a blog that collected free IELTS study materials and courseware in one place, making quality test preparation more accessible.
-          </p>
-          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
-            "Leadership is not about authority — it is about ensuring equal opportunity and using your own effort to lift others up."
-          </p>
-          <h4 class="text-white font-semibold mb-3 text-sm text-center">Highlights</h4>
-          <!-- Score Improvement — primary visual highlight -->
-          <div class="max-w-3xl mx-auto bg-gray-700/60 rounded-xl border border-[#F8C4B4]/30 p-5 sm:p-7 mb-4 flex items-center justify-center gap-7 sm:gap-12">
-            <div class="text-center">
-              <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Before</p>
-              <p class="text-5xl md:text-6xl font-bold text-gray-300">5.5</p>
-              <p class="text-xs text-gray-500 mt-1">Listening</p>
-            </div>
-            <div class="text-4xl md:text-5xl font-bold text-[#F8C4B4]" aria-hidden="true">→</div>
-            <div class="text-center">
-              <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">After 3 Months</p>
-              <p class="text-5xl md:text-6xl font-bold text-[#F8C4B4]">7.5</p>
-              <p class="text-xs text-[#F8C4B4] mt-1">Listening</p>
-            </div>
-          </div>
-          <p class="text-gray-400 text-xs text-center -mt-2 mb-5">One club member's documented result during a three-month study period</p>
-          <div class="flex flex-wrap justify-center gap-2 mb-6">
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">👥 4 Peer Tutors</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">📚 Free Resources</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">💰 School Funding Secured</span>
-          </div>
-          <div class="max-w-3xl mx-auto mt-7 space-y-5">
-            <div class="rounded-lg border border-gray-600/50 bg-gray-700/30 p-4">
-              <div class="text-center mb-3">
-                <h4 class="text-white font-semibold text-sm">Documented Listening Progress</h4>
-                <p class="text-gray-400 text-xs mt-1">Select either record to view the full screenshot.</p>
-              </div>
-              <div class="grid grid-cols-2 gap-3">
-                <button type="button" class="text-left bg-gray-900/60 rounded-lg overflow-hidden border border-gray-600/60 hover:border-[#F8C4B4]/70 transition-colors duration-300 group">
-                  <div class="h-24 sm:h-28 bg-white relative overflow-hidden">
-                    <img src="ielts-listening-5.5-before-redacted.png" alt="IELTS Listening score record before — band 5.5" loading="lazy" class="w-full h-full object-contain cursor-zoom-in" />
-                    <span class="absolute top-2 left-2 bg-gray-950/85 text-gray-200 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider">Before</span>
-                  </div>
-                  <span class="min-h-[40px] p-2.5 flex items-center justify-between gap-2">
-                    <span class="text-xs text-gray-300">Score record</span>
-                    <strong class="text-base text-gray-300">5.5</strong>
-                  </span>
-                </button>
-                <button type="button" class="text-left bg-gray-900/60 rounded-lg overflow-hidden border border-[#F8C4B4]/40 hover:border-[#F8C4B4] transition-colors duration-300 group">
-                  <div class="h-24 sm:h-28 bg-white relative overflow-hidden">
-                    <img src="ielts-listening-7.5-after-redacted.png" alt="IELTS Listening score record after — band 7.5" loading="lazy" class="w-full h-full object-contain cursor-zoom-in" />
-                    <span class="absolute top-2 left-2 bg-[#F8C4B4] text-gray-950 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">After</span>
-                  </div>
-                  <span class="min-h-[40px] p-2.5 flex items-center justify-between gap-2">
-                    <span class="text-xs text-gray-300">Score record</span>
-                    <strong class="text-base text-[#F8C4B4]">7.5</strong>
-                  </span>
-                </button>
-              </div>
-            </div>
-
-            <div class="rounded-lg border border-gray-600/50 bg-gray-700/30 p-4">
-              <div class="text-center mb-3">
-                <h4 class="text-white font-semibold text-sm">Program Media</h4>
-                <p class="text-gray-400 text-xs mt-1">Classroom teaching and listening-course materials.</p>
-              </div>
-              <div class="grid grid-cols-2 gap-3">
-                <a href="#" class="block bg-gray-900/60 rounded-lg overflow-hidden border border-gray-600/60 hover:border-[#F8C4B4]/50 transition-colors duration-300 group">
-                  <div class="h-24 sm:h-28 bg-gray-700 relative overflow-hidden">
-                    <img src="ielts-101.jpeg" alt="IELTS 101 — Our First Class" loading="lazy" class="w-full h-full object-cover cursor-zoom-in" />
-                  </div>
-                  <span class="min-h-[40px] p-2.5 flex items-center text-xs text-gray-300 group-hover:text-[#F8C4B4] transition-colors">IELTS 101 — First Class</span>
-                </a>
-                <a href="#" class="block bg-gray-900/60 rounded-lg overflow-hidden border border-gray-600/60 hover:border-[#F8C4B4]/50 transition-colors duration-300 group">
-                  <div class="h-24 sm:h-28 bg-gray-700 relative overflow-hidden">
-                    <img src="ielts-slide.png" alt="Sample Lecture Slide" loading="lazy" class="w-full h-full object-cover cursor-zoom-in" />
-                  </div>
-                  <span class="min-h-[40px] p-2.5 flex items-center text-xs text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Listening Lecture Slide</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 2: CS Revision Note (alternating — right) -->
+      <!-- Item 1: CS Revision Note -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
         <div class="md:w-1/2 md:pl-16">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">📝</div>
             <div>
-              <h3 class="text-white font-bold text-xl">Contributor</h3>
-              <p class="text-[#F8C4B4] text-sm">Cambridge International AS &amp; A Level Computer Science Revision Note</p>
+              <h3 class="text-white font-bold text-xl">Contributor &amp; Maintainer</h3>
+              <p class="text-[#F8C4B4] text-sm">Cambridge Computer Science Revision Guide</p>
               <p class="text-gray-400 text-xs mt-1">2-year project</p>
             </div>
           </div>
@@ -648,34 +477,34 @@ tailwind.config = {
       <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
-            Unable to find a resource that explained Cambridge International AS &amp; A Level Computer Science clearly enough, I reached out to the senior author of an existing guide and spent two years improving and maintaining it through corrections, explanations, and new material. Alongside this work, I collected Computer Science exam-preparation resources, uploaded them to Google Drive, incorporated the files into the revision note, and shared the complete collection free of charge through social media. I then trained a junior student to help maintain the guide, supporting its continued use after I moved on.
+            I improved and helped sustain a Cambridge Computer Science revision guide for two years. After contacting its student author, I expanded Structured Query Language (SQL) explanations through independent study and curated 135 resources. The guide was downloaded 400+ times via Xiaohongshu and Reddit and reached learners in 10+ countries.
           </p>
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
-            "With commitment to truth, even a small individual action can make a huge difference to a global community — and true leadership means making myself replaceable."
+            Struggling with SQL taught me to see confusion as a clue that an explanation was missing. I trained a younger contributor, who later updated the guide using the 2026 mark schemes and corrected syntax errors, so the resource could stay useful beyond my own involvement.
           </p>
           <!-- Big-number panel -->
           <div class="bg-gray-700/50 rounded-lg p-4 mb-4 flex items-center justify-center gap-6 md:gap-12 flex-wrap">
             <div class="text-center">
               <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">400+</p>
-              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Downloads Worldwide</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Downloads · Xiaohongshu &amp; Reddit</p>
             </div>
             <div class="w-px h-12 bg-gray-600 hidden sm:block"></div>
             <div class="text-center">
               <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">10+</p>
-              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Countries Reached</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Countries · Reddit</p>
             </div>
             <div class="w-px h-12 bg-gray-600 hidden sm:block"></div>
             <div class="text-center">
               <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">135</p>
-              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Files Collected</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Resources Curated</p>
             </div>
           </div>
           <h4 class="text-white font-semibold mb-2 text-sm">Impact</h4>
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌍 400+ Downloads Worldwide</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌏 Students in 10+ Countries</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">📚 135 Curated Cambridge International AS Level Computer Science Files</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🔄 Successor Trained</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌍 400+ Downloads · Xiaohongshu &amp; Reddit</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🌏 10+ Countries · Reddit</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">📚 135 CS Resources Curated</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">🔄 Younger Contributor Helped Maintain</span>
           </div>
 
           <!-- Full revision note preview -->
@@ -687,9 +516,6 @@ tailwind.config = {
               </div>
               <span class="shrink-0 bg-gray-700/70 text-gray-300 px-3 py-1 rounded-full text-xs font-medium">174 pages</span>
             </div>
-            <p class="text-gray-400 text-sm mb-4">
-              Browse the complete revision note below, or click the preview to open the full PDF in a new tab.
-            </p>
             <a href="AL%20CS%20MS%202026%20PDF%20Version.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the full Cambridge International AS &amp; A Level Computer Science revision note PDF" class="group block relative bg-white rounded-md overflow-hidden border border-gray-600 hover:border-[#F8C4B4] transition-colors">
               <object data="AL%20CS%20MS%202026%20PDF%20Version.pdf#page=1&amp;view=FitH&amp;toolbar=0&amp;navpanes=0" type="application/pdf" class="w-full h-[520px] pointer-events-none" aria-label="Preview of the Cambridge International AS &amp; A Level Computer Science revision note">
                 <div class="h-[520px] flex flex-col items-center justify-center text-gray-800 px-6 text-center">
@@ -712,9 +538,6 @@ tailwind.config = {
                 <h4 class="text-white font-semibold text-lg">2025 Revision Updates &amp; Amending Suggestions</h4>
               </div>
             </div>
-            <p class="text-gray-400 text-sm mb-4">
-              This local PDF records the sections I wrote and the updates I proposed for the 2025 edition of our Computer Science revision note.
-            </p>
             <a href="AS_Level_CS_Revision_Amending_Suggestions.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open my Computer Science revision contributions as a PDF" class="group block relative bg-white rounded-md overflow-hidden border border-gray-600 hover:border-[#F8C4B4] transition-colors">
               <object data="AS_Level_CS_Revision_Amending_Suggestions.pdf#page=1&amp;view=FitH&amp;toolbar=0&amp;navpanes=0" type="application/pdf" aria-label="Preview of my Computer Science revision contributions" class="w-full h-[380px] sm:h-[520px] pointer-events-none bg-white">
                 <div class="h-[380px] sm:h-[520px] flex flex-col items-center justify-center px-6 text-center bg-gray-100">
@@ -792,37 +615,42 @@ tailwind.config = {
                 <button type="button" onclick="scrollFeedback(1)" aria-label="View next student feedback" class="w-9 h-9 rounded-full border border-gray-600 bg-gray-800 text-[#F8C4B4] hover:bg-[#F8C4B4] hover:text-gray-950 transition-colors flex items-center justify-center text-xl">›</button>
               </div>
             </div>
-            <p class="text-gray-400 text-sm mb-4">Swipe or use the arrows to browse all five responses. Click any image to enlarge it.</p>
             <div id="feedback-carousel" class="feedback-carousel flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4" role="region" aria-label="Student feedback gallery">
               <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
                 <div class="h-[360px] sm:h-[430px] p-3 flex items-center justify-center">
-                  <img src="feedback.png" alt="Student feedback screenshot 1 of 5" loading="lazy" class="w-full h-full object-contain" />
+                  <img src="feedback.png" alt="Student feedback screenshot 1 of 6" loading="lazy" class="w-full h-full object-contain" />
                 </div>
-                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 1 of 5</figcaption>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 1 of 6</figcaption>
               </figure>
               <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
                 <div class="h-[360px] sm:h-[430px] p-3 flex items-center justify-center">
-                  <img src="6c54365cd2dbed76c3b9f00c02e84633.png" alt="Student feedback screenshot 2 of 5" loading="lazy" class="w-full h-full object-contain" />
+                  <img src="6c54365cd2dbed76c3b9f00c02e84633.png" alt="Student feedback screenshot 2 of 6" loading="lazy" class="w-full h-full object-contain" />
                 </div>
-                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 2 of 5</figcaption>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 2 of 6</figcaption>
               </figure>
               <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
                 <div class="h-[360px] sm:h-[430px] p-3 flex items-center justify-center">
-                  <img src="7052f9039daf4c89b04c21a6afe43547.png" alt="Student feedback screenshot 3 of 5" loading="lazy" class="w-full h-full object-contain" />
+                  <img src="7052f9039daf4c89b04c21a6afe43547.png" alt="Student feedback screenshot 3 of 6" loading="lazy" class="w-full h-full object-contain" />
                 </div>
-                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 3 of 5</figcaption>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 3 of 6</figcaption>
               </figure>
               <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
                 <div class="h-[360px] sm:h-[430px] p-3 flex items-center justify-center">
-                  <img src="63659eadabd12e01145cc25b4e7f801f.jpg" alt="Student feedback screenshot 4 of 5" loading="lazy" class="w-full h-full object-contain" />
+                  <img src="63659eadabd12e01145cc25b4e7f801f.jpg" alt="Student feedback screenshot 4 of 6" loading="lazy" class="w-full h-full object-contain" />
                 </div>
-                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 4 of 5</figcaption>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 4 of 6</figcaption>
               </figure>
               <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
                 <div class="h-[360px] sm:h-[430px] p-3 flex items-center justify-center">
-                  <img src="a8e988f72889fa747f9fe0741df83e8a.jpg" alt="Student feedback screenshot 5 of 5" loading="lazy" class="w-full h-full object-contain" />
+                  <img src="a8e988f72889fa747f9fe0741df83e8a.jpg" alt="Student feedback screenshot 5 of 6" loading="lazy" class="w-full h-full object-contain" />
                 </div>
-                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 5 of 5</figcaption>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 5 of 6</figcaption>
+              </figure>
+              <figure class="flex-none w-[88%] sm:w-[62%] lg:w-[46%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
+                <button type="button" onclick="openLightbox('revision-note-feedback-examiner-reports.png')" aria-label="Enlarge feedback about shared examiner reports" class="h-[360px] sm:h-[430px] w-full p-3 flex items-center justify-center bg-gray-900/70 cursor-zoom-in">
+                  <img src="revision-note-feedback-examiner-reports.png" alt="Reddit conversation thanking Jiazhou for sharing 2025 Computer Science examiner reports" loading="lazy" class="w-full h-full object-contain" />
+                </button>
+                <figcaption class="px-4 py-3 text-sm text-gray-300 border-t border-gray-700">Student feedback · 6 of 6 · examiner reports shared</figcaption>
               </figure>
             </div>
           </div>
@@ -863,14 +691,10 @@ tailwind.config = {
               </div>
             </div>
 
-            <p class="rounded-lg border-l-2 border-[#F8C4B4] bg-gray-900/45 px-4 py-3 text-xs leading-relaxed text-gray-400 mb-6">
-              These screenshots document the peer-review process. They do not establish that my review alone caused the grade change; Cambridge made the outcome decision through its official process.
-            </p>
-
             <div class="mb-4">
               <p class="text-[#F8C4B4] text-xs font-semibold uppercase tracking-wider">Process Evidence</p>
-              <h5 class="text-white font-semibold text-lg mt-1">Chinese Conversation Records</h5>
-              <p class="text-gray-400 text-sm mt-2">Selected records from two cases among the five candidates supported. Each original screenshot is paired with an English summary and translated excerpt.</p>
+              <h5 class="text-white font-semibold text-lg mt-1">Conversation Records &amp; English Translations</h5>
+              <p class="mt-2 rounded-lg border border-[#F8C4B4]/40 bg-[#F8C4B4]/10 px-4 py-3 text-sm leading-relaxed text-gray-200">Each record shows an English summary and translated messages first. Select the screenshot below to view the original Chinese conversation at full size.</p>
             </div>
 
             <!-- Case 1 -->
@@ -885,59 +709,58 @@ tailwind.config = {
                   <button type="button" onclick="scrollPeerReview('peer-review-case-one', 1)" aria-label="View next record in case 1" class="w-9 h-9 rounded-full border border-gray-600 bg-gray-800 text-[#F8C4B4] hover:bg-[#F8C4B4] hover:text-gray-950 transition-colors flex items-center justify-center text-xl">›</button>
                 </div>
               </div>
-              <p class="text-gray-400 text-xs mb-4">Original conversation in Chinese · Swipe, use the arrows, or click an image to enlarge.</p>
 
               <div id="peer-review-case-one" class="feedback-carousel flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4" role="region" aria-label="Peer script review case 1 gallery">
                 <figure class="flex-none w-[86%] sm:w-[62%] lg:w-[48%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
-                  <button type="button" onclick="openLightbox('67eb36a88152e2791e8333744e512ac2.png')" aria-label="Enlarge case 1 record 1" class="block w-full bg-gray-950 p-2">
-                    <img src="67eb36a88152e2791e8333744e512ac2.png" alt="Chinese conversation comparing two marked papers with published mark schemes" loading="lazy" class="w-full h-auto object-contain" />
-                  </button>
-                  <figcaption class="border-t border-gray-700 px-4 py-4 text-xs leading-relaxed text-gray-300">
-                    <p class="font-semibold text-[#F8C4B4] mb-1">English Summary</p>
+                  <figcaption class="px-4 py-5 sm:px-5 bg-gray-800/80 text-sm leading-relaxed text-gray-200">
+                    <p class="mb-2 text-xs font-bold uppercase tracking-wider text-[#F8C4B4]">English Summary</p>
                     <p>I explained that the overall marking appeared reasonable but identified several responses in Paper 1 where marks might be recoverable; Paper 2 presented fewer concerns.</p>
-                    <details class="mt-3 border-t border-gray-700/80 pt-3">
-                      <summary class="cursor-pointer font-semibold text-gray-200 hover:text-[#F8C4B4]">Read translated excerpt</summary>
-                      <div class="mt-2 space-y-2 text-gray-400">
+                    <div class="mt-4 rounded-lg border border-[#F8C4B4]/35 bg-gray-950/60 p-3 sm:p-4">
+                      <p class="mb-2 text-xs font-bold uppercase tracking-wider text-[#F8C4B4]">English Translation · Selected Messages</p>
+                      <div class="space-y-3 text-sm leading-relaxed text-gray-200">
                         <p><span class="text-gray-200">Jiazhou:</span> “I have reviewed both papers. Overall, the marking looks mostly reasonable, but I found several places where marks might be gained.”</p>
                         <p><span class="text-gray-200">Jiazhou:</span> “Most of the possible issues are in Paper 1; Paper 2 appears to have fewer problems.”</p>
                       </div>
-                    </details>
+                    </div>
                   </figcaption>
+                  <button type="button" onclick="openLightbox('67eb36a88152e2791e8333744e512ac2.png')" aria-label="Enlarge case 1 record 1" class="block w-full border-t border-gray-700 bg-gray-950 p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F8C4B4]">
+                    <img src="67eb36a88152e2791e8333744e512ac2.png" alt="Chinese conversation comparing two marked papers with published mark schemes" loading="lazy" class="w-full h-auto object-contain" />
+                  </button>
                 </figure>
 
                 <figure class="flex-none w-[86%] sm:w-[62%] lg:w-[48%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
-                  <button type="button" onclick="openLightbox('ffa8c08f792fbe22ceea82a851bf1297.png')" aria-label="Enlarge case 1 record 2" class="block w-full bg-gray-950 p-2">
-                    <img src="ffa8c08f792fbe22ceea82a851bf1297.png" alt="Chinese conversation distinguishing a spelling issue from a possible missed mark" loading="lazy" class="w-full h-auto object-contain" />
-                  </button>
-                  <figcaption class="border-t border-gray-700 px-4 py-4 text-xs leading-relaxed text-gray-300">
-                    <p class="font-semibold text-[#F8C4B4] mb-1">English Summary</p>
+                  <figcaption class="px-4 py-5 sm:px-5 bg-gray-800/80 text-sm leading-relaxed text-gray-200">
+                    <p class="mb-2 text-xs font-bold uppercase tracking-wider text-[#F8C4B4]">English Summary</p>
                     <p>I distinguished a spelling issue from whether the intended technical meaning remained clear, then identified another response that appeared close to an additional marking point.</p>
-                    <details class="mt-3 border-t border-gray-700/80 pt-3">
-                      <summary class="cursor-pointer font-semibold text-gray-200 hover:text-[#F8C4B4]">Read translated excerpt</summary>
-                      <div class="mt-2 space-y-2 text-gray-400">
+                    <div class="mt-4 rounded-lg border border-[#F8C4B4]/35 bg-gray-950/60 p-3 sm:p-4">
+                      <p class="mb-2 text-xs font-bold uppercase tracking-wider text-[#F8C4B4]">English Translation · Selected Messages</p>
+                      <div class="space-y-3 text-sm leading-relaxed text-gray-200">
                         <p><span class="text-gray-200">Jiazhou:</span> “The answer uses ‘coin’ instead of ‘coil’. The official guidance suggests spelling may be accepted when the key meaning is unaffected, but this may still involve examiner judgement.”</p>
                         <p><span class="text-gray-200">Candidate:</span> “So you recommend reviewing Paper 1, while Paper 2 has fewer concerns?”</p>
                         <p><span class="text-gray-200">Jiazhou:</span> “Yes.”</p>
                       </div>
-                    </details>
+                    </div>
                   </figcaption>
+                  <button type="button" onclick="openLightbox('ffa8c08f792fbe22ceea82a851bf1297.png')" aria-label="Enlarge case 1 record 2" class="block w-full border-t border-gray-700 bg-gray-950 p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F8C4B4]">
+                    <img src="ffa8c08f792fbe22ceea82a851bf1297.png" alt="Chinese conversation distinguishing a spelling issue from a possible missed mark" loading="lazy" class="w-full h-auto object-contain" />
+                  </button>
                 </figure>
 
                 <figure class="flex-none w-[86%] sm:w-[62%] lg:w-[48%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
-                  <button type="button" onclick="openLightbox('cbbb7e0bf5090e9375c838332aacb406.png')" aria-label="Enlarge case 1 record 3" class="block w-full bg-gray-950 p-2">
-                    <img src="cbbb7e0bf5090e9375c838332aacb406.png" alt="Chinese conversation continuing an evidence-based review of an SQL response" loading="lazy" class="w-full h-auto object-contain" />
-                  </button>
-                  <figcaption class="border-t border-gray-700 px-4 py-4 text-xs leading-relaxed text-gray-300">
-                    <p class="font-semibold text-[#F8C4B4] mb-1">English Summary</p>
+                  <figcaption class="px-4 py-5 sm:px-5 bg-gray-800/80 text-sm leading-relaxed text-gray-200">
+                    <p class="mb-2 text-xs font-bold uppercase tracking-wider text-[#F8C4B4]">English Summary</p>
                     <p>During a second check, I compared an SQL response with the mark scheme and identified a further point worth reconsidering before a formal review request.</p>
-                    <details class="mt-3 border-t border-gray-700/80 pt-3">
-                      <summary class="cursor-pointer font-semibold text-gray-200 hover:text-[#F8C4B4]">Read translated excerpt</summary>
-                      <div class="mt-2 space-y-2 text-gray-400">
+                    <div class="mt-4 rounded-lg border border-[#F8C4B4]/35 bg-gray-950/60 p-3 sm:p-4">
+                      <p class="mb-2 text-xs font-bold uppercase tracking-wider text-[#F8C4B4]">English Translation · Selected Messages</p>
+                      <div class="space-y-3 text-sm leading-relaxed text-gray-200">
                         <p><span class="text-gray-200">Jiazhou:</span> “I think there is a good chance the total could reach 109.”</p>
                         <p><span class="text-gray-200">Jiazhou:</span> “I have just noticed another point. This SQL response may be one mark short compared with the mark scheme, so I would reconsider it if requesting a review.”</p>
                       </div>
-                    </details>
+                    </div>
                   </figcaption>
+                  <button type="button" onclick="openLightbox('cbbb7e0bf5090e9375c838332aacb406.png')" aria-label="Enlarge case 1 record 3" class="block w-full border-t border-gray-700 bg-gray-950 p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F8C4B4]">
+                    <img src="cbbb7e0bf5090e9375c838332aacb406.png" alt="Chinese conversation continuing an evidence-based review of an SQL response" loading="lazy" class="w-full h-auto object-contain" />
+                  </button>
                 </figure>
               </div>
             </div>
@@ -954,40 +777,39 @@ tailwind.config = {
                   <button type="button" onclick="scrollPeerReview('peer-review-case-two', 1)" aria-label="View next record in case 2" class="w-9 h-9 rounded-full border border-gray-600 bg-gray-800 text-[#F8C4B4] hover:bg-[#F8C4B4] hover:text-gray-950 transition-colors flex items-center justify-center text-xl">›</button>
                 </div>
               </div>
-              <p class="text-gray-400 text-xs mb-4">Original conversation in Chinese · English summaries focus only on the examination review.</p>
 
               <div id="peer-review-case-two" class="feedback-carousel flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4" role="region" aria-label="Peer script review case 2 gallery">
                 <figure class="flex-none w-[86%] sm:w-[62%] lg:w-[48%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
-                  <button type="button" onclick="openLightbox('8f91ae43a5bba556579d59c62ed998d6.png')" aria-label="Enlarge case 2 record 1" class="block w-full bg-gray-950 p-2">
-                    <img src="8f91ae43a5bba556579d59c62ed998d6.png" alt="Chinese conversation explaining likely mark changes after reviewing examination scripts" loading="lazy" class="w-full h-auto object-contain" />
-                  </button>
-                  <figcaption class="border-t border-gray-700 px-4 py-4 text-xs leading-relaxed text-gray-300">
-                    <p class="font-semibold text-[#F8C4B4] mb-1">English Summary</p>
+                  <figcaption class="px-4 py-5 sm:px-5 bg-gray-800/80 text-sm leading-relaxed text-gray-200">
+                    <p class="mb-2 text-xs font-bold uppercase tracking-wider text-[#F8C4B4]">English Summary</p>
                     <p>I reviewed the materials the candidate sent, separated securely awarded marks from a limited possible increase, and explained why the likely outcome appeared to be a small net gain.</p>
-                    <details class="mt-3 border-t border-gray-700/80 pt-3">
-                      <summary class="cursor-pointer font-semibold text-gray-200 hover:text-[#F8C4B4]">Read translated excerpt</summary>
-                      <div class="mt-2 space-y-2 text-gray-400">
+                    <div class="mt-4 rounded-lg border border-[#F8C4B4]/35 bg-gray-950/60 p-3 sm:p-4">
+                      <p class="mb-2 text-xs font-bold uppercase tracking-wider text-[#F8C4B4]">English Translation · Selected Messages</p>
+                      <div class="space-y-3 text-sm leading-relaxed text-gray-200">
                         <p><span class="text-gray-200">Jiazhou:</span> “Apart from the checksum item, which might gain one mark, the other areas appear relatively stable. Overall, it is probably a net gain of one mark.”</p>
                         <p><span class="text-gray-200">Candidate:</span> “If it is only one additional mark, do I still need to request Service 2?”</p>
                       </div>
-                    </details>
+                    </div>
                   </figcaption>
+                  <button type="button" onclick="openLightbox('8f91ae43a5bba556579d59c62ed998d6.png')" aria-label="Enlarge case 2 record 1" class="block w-full border-t border-gray-700 bg-gray-950 p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F8C4B4]">
+                    <img src="8f91ae43a5bba556579d59c62ed998d6.png" alt="Chinese conversation explaining likely mark changes after reviewing examination scripts" loading="lazy" class="w-full h-auto object-contain" />
+                  </button>
                 </figure>
 
                 <figure class="flex-none w-[86%] sm:w-[62%] lg:w-[48%] snap-center rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/70">
-                  <button type="button" onclick="openLightbox('11c3e325f61ba4d11a561d30518cbaa1.png')" aria-label="Enlarge case 2 record 2" class="block w-full bg-gray-950 p-2">
-                    <img src="11c3e325f61ba4d11a561d30518cbaa1.png" alt="Chinese conversation discussing Cambridge Enquiry About Results service options" loading="lazy" class="w-full h-auto object-contain" />
-                  </button>
-                  <figcaption class="border-t border-gray-700 px-4 py-4 text-xs leading-relaxed text-gray-300">
-                    <p class="font-semibold text-[#F8C4B4] mb-1">English Summary</p>
+                  <figcaption class="px-4 py-5 sm:px-5 bg-gray-800/80 text-sm leading-relaxed text-gray-200">
+                    <p class="mb-2 text-xs font-bold uppercase tracking-wider text-[#F8C4B4]">English Summary</p>
                     <p>I explained the difference between a clerical re-check and a Review of Marking, and why Service 2 was the relevant option when the concern involved application of the mark scheme.</p>
-                    <details class="mt-3 border-t border-gray-700/80 pt-3">
-                      <summary class="cursor-pointer font-semibold text-gray-200 hover:text-[#F8C4B4]">Read translated excerpt</summary>
-                      <div class="mt-2 space-y-2 text-gray-400">
+                    <div class="mt-4 rounded-lg border border-[#F8C4B4]/35 bg-gray-950/60 p-3 sm:p-4">
+                      <p class="mb-2 text-xs font-bold uppercase tracking-wider text-[#F8C4B4]">English Translation · Selected Messages</p>
+                      <div class="space-y-3 text-sm leading-relaxed text-gray-200">
                         <p><span class="text-gray-200">Jiazhou:</span> “A mark increase based on how the response was evaluated would require Service 2. Services 1 and 1S are clerical checks and are unlikely to address this concern.”</p>
                       </div>
-                    </details>
+                    </div>
                   </figcaption>
+                  <button type="button" onclick="openLightbox('11c3e325f61ba4d11a561d30518cbaa1.png')" aria-label="Enlarge case 2 record 2" class="block w-full border-t border-gray-700 bg-gray-950 p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F8C4B4]">
+                    <img src="11c3e325f61ba4d11a561d30518cbaa1.png" alt="Chinese conversation discussing Cambridge Enquiry About Results service options" loading="lazy" class="w-full h-auto object-contain" />
+                  </button>
                 </figure>
               </div>
             </div>
@@ -995,7 +817,211 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Item 3: WLSA Student Operations Volunteer (left) -->
+      <!-- Item 2: IELTS Club -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <!-- left: content -->
+        <div class="md:w-1/2 md:pr-16 md:text-right">
+          <div class="flex items-center gap-3 mb-4 md:justify-end">
+            <div>
+              <h3 class="text-white font-bold text-xl">Co-President &amp; Listening Lecturer</h3>
+              <p class="text-[#F8C4B4] text-sm">IELTS Club</p>
+              <p class="text-gray-400 text-xs mt-1">3 semesters</p>
+            </div>
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🎓</div>
+          </div>
+        </div>
+        <!-- right: placeholder -->
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <!-- Detail card for IELTS Club -->
+      <div class="relative z-[1] bg-gray-800 rounded-2xl overflow-hidden shadow-xl max-w-5xl mx-auto reveal border border-gray-700/60">
+        <div class="p-5 sm:p-7 md:p-8">
+          <p class="text-gray-300 text-sm mb-4">
+            I helped 60+ students prepare for IELTS over three semesters by co-founding and co-leading the club, coordinating four peer tutors, securing funding for shared materials, and teaching Listening. When attendance was low, I reached out to students personally and revised lessons based on their feedback. One member’s Listening score rose from 5.5 to 7.5 in three months. I handed the club to a successor team, which later also taught IGCSE English as a Second Language.
+          </p>
+          <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
+            I learned that making materials affordable is only part of access: I also needed to notice who felt uncomfortable asking for help and change how we reached them.
+          </p>
+          <h4 class="text-white font-semibold mb-3 text-sm text-center">Highlights</h4>
+          <!-- Score Improvement — primary visual highlight -->
+          <div class="max-w-3xl mx-auto bg-gray-700/60 rounded-xl border border-[#F8C4B4]/30 p-5 sm:p-7 mb-4 flex items-center justify-center gap-7 sm:gap-12">
+            <div class="text-center">
+              <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Before</p>
+              <p class="text-5xl md:text-6xl font-bold text-gray-300">5.5</p>
+              <p class="text-xs text-gray-500 mt-1">Listening</p>
+            </div>
+            <div class="text-4xl md:text-5xl font-bold text-[#F8C4B4]" aria-hidden="true">→</div>
+            <div class="text-center">
+              <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">After 3 Months</p>
+              <p class="text-5xl md:text-6xl font-bold text-[#F8C4B4]">7.5</p>
+              <p class="text-xs text-[#F8C4B4] mt-1">Listening</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap justify-center gap-2 mb-6">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">👥 4 Peer Tutors</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">📚 Free Resources</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">💰 School Funding Secured</span>
+          </div>
+          <div class="max-w-3xl mx-auto mt-7 space-y-5">
+            <div class="rounded-lg border border-gray-600/50 bg-gray-700/30 p-4">
+              <div class="text-center mb-3">
+                <h4 class="text-white font-semibold text-sm">Documented Listening Progress</h4>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <button type="button" class="text-left bg-gray-900/60 rounded-lg overflow-hidden border border-gray-600/60 hover:border-[#F8C4B4]/70 transition-colors duration-300 group">
+                  <div class="h-24 sm:h-28 bg-white relative overflow-hidden">
+                    <img src="ielts-listening-5.5-before-redacted.png" alt="IELTS Listening score record before — band 5.5" loading="lazy" class="w-full h-full object-contain cursor-zoom-in" />
+                    <span class="absolute top-2 left-2 bg-gray-950/85 text-gray-200 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider">Before</span>
+                  </div>
+                  <span class="min-h-[40px] p-2.5 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-300">Score record</span>
+                    <strong class="text-base text-gray-300">5.5</strong>
+                  </span>
+                </button>
+                <button type="button" class="text-left bg-gray-900/60 rounded-lg overflow-hidden border border-[#F8C4B4]/40 hover:border-[#F8C4B4] transition-colors duration-300 group">
+                  <div class="h-24 sm:h-28 bg-white relative overflow-hidden">
+                    <img src="ielts-listening-7.5-after-redacted.png" alt="IELTS Listening score record after — band 7.5" loading="lazy" class="w-full h-full object-contain cursor-zoom-in" />
+                    <span class="absolute top-2 left-2 bg-[#F8C4B4] text-gray-950 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">After</span>
+                  </div>
+                  <span class="min-h-[40px] p-2.5 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-300">Score record</span>
+                    <strong class="text-base text-[#F8C4B4]">7.5</strong>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="rounded-lg border border-gray-600/50 bg-gray-700/30 p-4">
+              <div class="text-center mb-3">
+                <h4 class="text-white font-semibold text-sm">Program Media</h4>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <a href="#" class="block bg-gray-900/60 rounded-lg overflow-hidden border border-gray-600/60 hover:border-[#F8C4B4]/50 transition-colors duration-300 group">
+                  <div class="h-24 sm:h-28 bg-gray-700 relative overflow-hidden">
+                    <img src="ielts-101.jpeg" alt="IELTS 101 — Our First Class" loading="lazy" class="w-full h-full object-cover cursor-zoom-in" />
+                  </div>
+                  <span class="min-h-[40px] p-2.5 flex items-center text-xs text-gray-300 group-hover:text-[#F8C4B4] transition-colors">IELTS 101 — First Class</span>
+                </a>
+                <a href="#" class="block bg-gray-900/60 rounded-lg overflow-hidden border border-gray-600/60 hover:border-[#F8C4B4]/50 transition-colors duration-300 group">
+                  <div class="h-24 sm:h-28 bg-gray-700 relative overflow-hidden">
+                    <img src="ielts-slide.png" alt="Sample Lecture Slide" loading="lazy" class="w-full h-full object-cover cursor-zoom-in" />
+                  </div>
+                  <span class="min-h-[40px] p-2.5 flex items-center text-xs text-gray-300 group-hover:text-[#F8C4B4] transition-colors">Listening Lecture Slide</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: AstarLearningHome -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <div class="md:w-1/2 md:pl-16">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">✦</div>
+            <div>
+              <h3 class="text-white font-bold text-xl">Founder &amp; Chief Technology Officer</h3>
+              <p class="text-[#F8C4B4] text-sm">AstarLearningHome</p>
+              <p class="text-gray-400 text-xs mt-1">Exam Preparation Platform</p>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+        <div class="p-6">
+          <p class="text-gray-300 text-sm mb-4">
+            AstarLearningHome is an exam preparation platform I founded with several junior students and led as CTO. It has reached 200+ users and graded 500+ exam answers with 90%+ accuracy. I led development of automated grading with feedback based on examiner reports, definition search across textbooks and past papers, photo-based question search, and mistake notebook exports.
+          </p>
+          <p class="text-gray-300 text-sm mb-5 italic border-l-2 border-[#F8C4B4] pl-4">
+            Building for real learners taught me that a useful score must also show students what to review and why.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 rounded-lg bg-gray-700/50 p-4 text-center">
+            <div><p class="text-3xl font-bold text-[#F8C4B4]">200+</p><p class="text-xs text-gray-400 mt-1">Users Reached</p></div>
+            <div><p class="text-3xl font-bold text-[#F8C4B4]">500+</p><p class="text-xs text-gray-400 mt-1">Exam Answers Graded</p></div>
+            <div><p class="text-3xl font-bold text-[#F8C4B4]">90%+</p><p class="text-xs text-gray-400 mt-1">Reported Grading Accuracy</p></div>
+          </div>
+          <h4 class="text-white font-semibold mb-3 text-sm">Platform Screenshots</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <figure class="md:col-span-2 rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/60">
+              <button type="button" onclick="openLightbox('astarlearninghome-glossary.png')" aria-label="Enlarge AstarLearningHome definition search screenshot" class="block w-full bg-gray-950">
+                <img src="astarlearninghome-glossary.png" alt="AstarLearningHome glossary search showing a Computer Science protocol definition and explanation" loading="lazy" class="w-full h-auto object-contain" />
+              </button>
+              <figcaption class="px-4 py-3 text-sm text-gray-300">Definition search with source text and study guidance.</figcaption>
+            </figure>
+            <figure class="rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/60">
+              <button type="button" onclick="openLightbox('astarlearninghome-flashcard-term.png')" aria-label="Enlarge AstarLearningHome flashcard front screenshot" class="block w-full bg-gray-950">
+                <img src="astarlearninghome-flashcard-term.png" alt="AstarLearningHome flashcard showing the term Domain Name Service" loading="lazy" class="w-full h-auto object-contain" />
+              </button>
+              <figcaption class="px-4 py-3 text-sm text-gray-300">Flashcard term.</figcaption>
+            </figure>
+            <figure class="rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/60">
+              <button type="button" onclick="openLightbox('astarlearninghome-flashcard-definition.png')" aria-label="Enlarge AstarLearningHome flashcard back screenshot" class="block w-full bg-gray-950">
+                <img src="astarlearninghome-flashcard-definition.png" alt="AstarLearningHome flashcard showing the definition of Domain Name Service" loading="lazy" class="w-full h-auto object-contain" />
+              </button>
+              <figcaption class="px-4 py-3 text-sm text-gray-300">Flashcard definition.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Introductory CS Curriculum Designer -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <div class="md:w-1/2 md:pr-16 md:text-right">
+          <div class="flex items-center gap-3 mb-4 md:justify-end">
+            <div>
+              <h3 class="text-white font-bold text-xl">Introductory Computer Science Curriculum</h3>
+              <p class="text-[#F8C4B4] text-sm">Designer</p>
+              <p class="text-gray-400 text-xs mt-1">Course for Incoming High-School Students</p>
+            </div>
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">💻</div>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+        <div class="p-6">
+          <p class="text-gray-300 text-sm mb-4">
+            I am developing an introductory computing course for incoming high-school students, applying lessons from Harvard’s CS50 and MIT’s Missing Semester and exploring how AI can support beginners.
+          </p>
+          <p class="text-gray-300 text-sm mb-4">
+            I reached out to SFU Professor Angelica Lim to ask about AI use in introductory CS education. In a 72-hour Air Leads League Hackathon, my team built an AI agent tool and earned a Silver Award. These experiences taught me to ask whether a tool helps students understand a concept or simply delivers an answer.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <figure class="rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/60">
+              <div class="aspect-[3/2] bg-[#10151c] flex items-center justify-center">
+                <img src="basic-algorithm-quiz.png" alt="Basic algorithm quiz screenshot showing the Valid Palindrome problem and solution notes" loading="lazy" class="w-full h-full object-contain cursor-zoom-in" />
+              </div>
+              <figcaption class="border-t border-gray-700 px-4 py-3 text-sm text-gray-300">Screenshot from my basic algorithm quiz.</figcaption>
+            </figure>
+            <figure class="rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/60">
+              <div class="aspect-[3/2] bg-[#0d1117] flex items-center justify-center">
+                <img src="missing-semester-notes-preview.svg" alt="Preview of my MIT Missing Semester Lecture 1 Cornell notes on GitHub" loading="lazy" class="w-full h-full object-contain cursor-zoom-in" />
+              </div>
+              <figcaption class="border-t border-gray-700 px-4 py-3 text-sm text-gray-300">
+                My notes from studying MIT’s Missing Semester.
+                <a href="https://github.com/JasperWu0214/MIT-Missing-Semester/blob/main/missing-semester-lecture1-cornell-notes.md" target="_blank" rel="noopener noreferrer" class="block mt-1 text-[#F8C4B4] hover:text-white transition-colors">Read the notes on GitHub ↗</a>
+              </figcaption>
+            </figure>
+          </div>
+          <p class="text-gray-300 text-sm mb-4">
+            MIT calls it <a href="https://missing.csail.mit.edu/" target="_blank" rel="noopener noreferrer" class="text-[#F8C4B4] hover:text-white transition-colors">The Missing Semester of Your CS Education</a> because it teaches practical CS tools often left out of classes, such as the command line, text editors, and version control.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">CS Education</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">Curriculum Design</span>
+            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">AI &amp; Fundamentals</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5: WLSA Student Operations Volunteer (left) -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
         <div class="md:w-1/2 md:pr-16 md:text-right">
@@ -1014,7 +1040,7 @@ tailwind.config = {
       <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
-            During the university fair, three sessions suddenly overlapped, leaving 20+ university representatives and approximately twice the expected number of families crowding the hallway. While my team froze, I stepped in — assigned registration, crowd flow, and room coordination, took over registration, and gave each volunteer a specific responsibility. A representative later told me I handled it "like an adult."
+            I supported a university fair involving 20+ university representatives and twice the expected number of families. When three sessions overlapped, I assigned volunteers to registration, crowd flow, and room coordination, and took over registration myself. Clear responsibilities helped the team keep sessions operating with minimal delay.
           </p>
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
             "Leadership is not about never panicking — it's about being the first to find your footing so others can follow."
@@ -1055,7 +1081,7 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Item 4: China-US Exchange (right) -->
+      <!-- Item 6: China-US Exchange (right) -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
         <div class="md:w-1/2 md:pl-16">
@@ -1074,7 +1100,7 @@ tailwind.config = {
       <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
-            Invited at the national level, American high school students came to China as guests of the President. I served as a student ambassador, sharing Chinese culture and building friendships that last to this day. Cultural exchange is not about showcasing superiority, but about genuine empathy.
+            Selected as a student ambassador for a national China–U.S. youth exchange, I facilitated small-group conversations, shared meals and cultural activities, and helped visiting American high school students communicate across language and cultural differences. I stayed in touch with participants after the formal program ended.
           </p>
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
             "When you truly walk in another person's shoes, you don't just build bridges — you become one."
@@ -1121,7 +1147,7 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Item 5: Cross-School Seminar (left) -->
+      <!-- Item 7: Cross-School Seminar (left) -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
         <div class="md:w-1/2 md:pr-16 md:text-right">
@@ -1140,10 +1166,10 @@ tailwind.config = {
       <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
-            I noticed that junior high school students in my community lacked access to firsthand advice on how to navigate the transition to senior high school and prepare for the senior high school entrance examination (Zhongkao). Instead of waiting for someone else to bridge that gap, I took the initiative — I contacted my former junior high homeroom teacher to understand students' needs and help coordinate the seminar, reached out across my network, personally invited six senior students from six different high schools, designed the agenda, coordinated schedules, and hosted the entire seminar myself.
+            I helped 50+ younger students navigate the Zhongkao and transition to senior high school by organizing and hosting a cross-school seminar. I recruited six senior students from six schools, designed the agenda, and coordinated logistics so participants could hear different approaches.
           </p>
           <p class="text-gray-300 text-sm mb-4 italic border-l-2 border-[#F8C4B4] pl-4">
-            "Leadership is not about having a title or waiting for permission — it is about seeing a need, bringing the right people together, and creating a space where others can grow."
+            I learned that useful guidance broadens a student’s choices instead of prescribing a single path.
           </p>
           <!-- Big-number panel -->
           <div class="bg-gray-700/50 rounded-lg p-4 mb-4 flex items-center justify-center gap-6 md:gap-12 flex-wrap">
@@ -1181,7 +1207,7 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Item 6: Campus Volunteer (right — alternating) -->
+      <!-- Item 8: Campus Volunteer (right — alternating) -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
         <div class="md:w-1/2 md:pl-16">
@@ -1243,34 +1269,25 @@ tailwind.config = {
 </section>
 
 <!-- ================================================ -->
-<!--  PROJECTS & GITHUB                               -->
+<!--  PROJECTS & GITHUB — final section                -->
 <!-- ================================================ -->
 <section id="projects" class="container mx-auto px-4 md:px-6 py-20 scroll-mt-20">
   <div class="max-w-5xl mx-auto">
     <div class="text-center reveal">
-      <p class="text-[#F8C4B4] text-sm font-semibold uppercase tracking-[0.24em]">GitHub Overview</p>
+      <p class="text-[#F8C4B4] text-sm font-semibold uppercase tracking-[0.24em]">GitHub</p>
       <h2 class="text-3xl md:text-5xl font-bold mt-3">Projects</h2>
-      <p class="text-gray-300 text-base mt-5 max-w-3xl mx-auto">
-        My contribution activity and public repositories on GitHub.
-      </p>
+      <p class="text-gray-300 text-base mt-5">My public repositories and GitHub activity.</p>
     </div>
 
     <article class="mt-12 rounded-2xl border border-gray-600/60 bg-gray-800/80 p-5 sm:p-7 shadow-xl reveal">
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <h3 id="github-contribution-title" class="text-white text-lg font-semibold">Loading contribution activity…</h3>
-          <p class="text-gray-400 text-xs mt-1">@JasperWu0214 · last 12 months</p>
-        </div>
-        <a href="https://github.com/JasperWu0214?tab=overview" target="_blank" rel="noopener noreferrer" class="text-[#F8C4B4] text-sm font-semibold hover:text-white transition-colors">
-          Open GitHub Overview ↗
-        </a>
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <h3 id="github-contribution-title" class="text-white text-xl font-semibold">GitHub contribution activity</h3>
+        <a href="https://github.com/JasperWu0214" target="_blank" rel="noopener noreferrer" class="text-[#F8C4B4] text-sm font-semibold hover:text-white transition-colors">View GitHub profile ↗</a>
       </div>
-
       <div class="mt-6 overflow-x-auto pb-3 github-calendar-scroll" aria-label="GitHub contribution calendar">
         <div id="github-contribution-calendar" class="github-calendar" role="grid" aria-describedby="github-contribution-title"></div>
       </div>
-
-      <div class="mt-3 flex items-center justify-end gap-2 text-[11px] text-gray-400">
+      <div class="mt-3 flex items-center justify-end gap-2 text-xs text-gray-400" aria-hidden="true">
         <span>Less</span>
         <span class="github-legend-cell" data-level="0"></span>
         <span class="github-legend-cell" data-level="1"></span>
@@ -1279,22 +1296,15 @@ tailwind.config = {
         <span class="github-legend-cell" data-level="4"></span>
         <span>More</span>
       </div>
-      <p id="github-contribution-note" class="text-gray-500 text-xs mt-4">
-        Contribution data is loaded from the public GitHub profile. Each square represents one day.
-      </p>
     </article>
 
-    <div class="mt-8 reveal">
-      <div class="flex items-end justify-between gap-4 mb-4">
-        <div>
-          <p class="text-[#F8C4B4] text-xs font-semibold uppercase tracking-wider">Repositories</p>
-          <h3 class="text-white text-2xl font-bold mt-1">Public on GitHub</h3>
-        </div>
+    <div class="mt-10 reveal">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-4">
+        <h3 class="text-white text-2xl font-bold">Public repositories</h3>
         <a href="https://github.com/JasperWu0214?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-[#F8C4B4] text-sm font-semibold hover:text-white transition-colors">View all ↗</a>
       </div>
-
       <div id="github-repositories" class="grid grid-cols-1 md:grid-cols-2 gap-4" aria-live="polite">
-        <div class="rounded-xl border border-gray-600/60 bg-gray-800/75 p-5 text-sm text-gray-400">Loading public repositories…</div>
+        <p class="text-gray-300">Loading public repositories…</p>
       </div>
     </div>
   </div>
@@ -1340,191 +1350,6 @@ function scrollPeerReview(carouselId, direction) {
   });
 }
 
-// ===== GITHUB CONTRIBUTION CALENDAR =====
-function renderGitHubCalendar(days) {
-  const calendar = document.getElementById('github-contribution-calendar');
-  if (!calendar) return;
-  calendar.replaceChildren();
-  days.forEach(day => {
-    const cell = document.createElement('span');
-    cell.className = 'github-day';
-    cell.dataset.level = String(Math.max(0, Math.min(4, Number(day.level) || 0)));
-    cell.setAttribute('role', 'gridcell');
-    cell.setAttribute('aria-label', `${day.count || 0} contributions on ${day.date || 'this day'}`);
-    cell.title = `${day.count || 0} contributions on ${day.date || 'this day'}`;
-    calendar.appendChild(cell);
-  });
-}
-
-async function loadGitHubContributions() {
-  const title = document.getElementById('github-contribution-title');
-  const note = document.getElementById('github-contribution-note');
-  if (!title) return;
-
-  renderGitHubCalendar(Array.from({ length: 371 }, () => ({ count: 0, level: 0, date: '' })));
-
-  try {
-    const response = await fetch('https://github-contributions-api.jogruber.de/v4/JasperWu0214?y=last');
-    if (!response.ok) throw new Error('Contribution data unavailable');
-    const data = await response.json();
-    const days = Array.isArray(data.contributions) ? data.contributions : [];
-    if (!days.length) throw new Error('No contribution data returned');
-
-    renderGitHubCalendar(days);
-    const total = Number(data.total?.lastYear) || days.reduce((sum, day) => sum + (Number(day.count) || 0), 0);
-    title.textContent = `${total} contributions in the last year`;
-  } catch (error) {
-    title.textContent = 'GitHub contribution activity';
-    if (note) note.textContent = 'Live contribution data could not be loaded. Open GitHub Overview to view the current record.';
-  }
-}
-
-loadGitHubContributions();
-
-function createGitHubRepositoryCard(repo) {
-  const repositoryName = String(repo.name).toLowerCase();
-  const isBlind75Note = repositoryName === 'blind75_note';
-  const card = document.createElement('a');
-  card.href = repo.html_url;
-  card.target = '_blank';
-  card.rel = 'noopener noreferrer';
-  card.className = `group flex min-h-[190px] flex-col rounded-xl border border-gray-600/60 bg-gray-800/75 p-5 shadow-lg hover:border-[#F8C4B4]/70 hover:-translate-y-1 transition-all duration-300${isBlind75Note ? ' md:row-span-2' : ''}`;
-
-  const heading = document.createElement('div');
-  heading.className = 'flex items-start justify-between gap-3';
-
-  const nameWrap = document.createElement('div');
-  nameWrap.className = 'flex items-center gap-3 min-w-0';
-  const repoIcon = document.createElement('span');
-  repoIcon.className = 'text-[#F8C4B4] text-xl shrink-0';
-  repoIcon.setAttribute('aria-hidden', 'true');
-  repoIcon.textContent = '◇';
-  const name = document.createElement('h4');
-  name.className = 'text-[#F8C4B4] text-lg font-semibold break-all group-hover:text-white transition-colors';
-  name.textContent = repo.name;
-  nameWrap.append(repoIcon, name);
-
-  const visibility = document.createElement('span');
-  visibility.className = 'rounded-full border border-gray-500 px-2.5 py-0.5 text-[10px] font-semibold text-gray-400 shrink-0';
-  visibility.textContent = repo.archived ? 'Archived' : 'Public';
-  heading.append(nameWrap, visibility);
-
-  let preview = null;
-  if (isBlind75Note) {
-    preview = document.createElement('figure');
-    preview.className = 'mt-4 overflow-hidden rounded-lg border border-gray-600/70 bg-gray-950';
-
-    const image = document.createElement('img');
-    image.src = 'blind-75-note-example.png';
-    image.alt = 'Example of a Blind 75 note showing Python solutions and complexity analysis';
-    image.loading = 'lazy';
-    image.className = 'w-full aspect-[2820/1846] object-contain object-top bg-gray-950 cursor-zoom-in group-hover:opacity-90 transition-opacity';
-    image.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      openLightbox(image.src);
-    });
-
-    const caption = document.createElement('figcaption');
-    caption.className = 'border-t border-gray-700 px-3 py-2 text-xs text-gray-400';
-    caption.textContent = 'Note example · solutions, code, and complexity analysis · click to enlarge';
-    preview.append(image, caption);
-  }
-
-  const description = document.createElement('p');
-  description.className = 'text-gray-300 text-sm leading-relaxed mt-4 flex-1';
-  description.textContent = repo.description || 'Public GitHub repository.';
-
-  const footer = document.createElement('div');
-  footer.className = 'flex flex-wrap items-center justify-between gap-3 mt-5 text-xs text-gray-400';
-  const metadata = document.createElement('div');
-  metadata.className = 'flex flex-wrap items-center gap-4';
-
-  if (repo.language) {
-    const language = document.createElement('span');
-    language.className = 'inline-flex items-center gap-2';
-    const dot = document.createElement('span');
-    dot.className = 'w-3 h-3 rounded-full';
-    const languageColors = {
-      HTML: '#e34c26', CSS: '#563d7c', JavaScript: '#f1e05a', TypeScript: '#3178c6',
-      Python: '#3572A5', Java: '#b07219', 'C++': '#f34b7d', C: '#555555'
-    };
-    dot.style.backgroundColor = languageColors[repo.language] || '#8b949e';
-    const label = document.createElement('span');
-    label.textContent = repo.language;
-    language.append(dot, label);
-    metadata.appendChild(language);
-  }
-
-  if (Number(repo.stargazers_count) > 0) {
-    const stars = document.createElement('span');
-    stars.textContent = `☆ ${repo.stargazers_count}`;
-    metadata.appendChild(stars);
-  }
-
-  const openLabel = document.createElement('span');
-  openLabel.className = 'group-hover:text-[#F8C4B4] transition-colors';
-  openLabel.textContent = 'Open repository ↗';
-  footer.append(metadata, openLabel);
-  if (preview) {
-    card.append(heading, preview, description, footer);
-  } else {
-    card.append(heading, description, footer);
-  }
-  return card;
-}
-
-function sortGitHubRepositories(repositories) {
-  const featuredOrder = ['blind75_note', 'jiazhouwu', 'examinermachine'];
-  return [...repositories].sort((a, b) => {
-    const aIndex = featuredOrder.indexOf(String(a.name).toLowerCase());
-    const bIndex = featuredOrder.indexOf(String(b.name).toLowerCase());
-    const aPriority = aIndex === -1 ? featuredOrder.length : aIndex;
-    const bPriority = bIndex === -1 ? featuredOrder.length : bIndex;
-    return aPriority - bPriority;
-  });
-}
-
-async function loadGitHubRepositories() {
-  const container = document.getElementById('github-repositories');
-  if (!container) return;
-
-  const fallbackRepositories = [
-    {
-      name: 'jiazhouwu',
-      description: 'Personal website and application portfolio.',
-      html_url: 'https://github.com/JasperWu0214/jiazhouwu',
-      language: 'HTML',
-      stargazers_count: 1
-    },
-    {
-      name: 'blind75_note',
-      description: 'Notes for Blind 75 problems, including ideas, code, and complexity analysis.',
-      html_url: 'https://github.com/JasperWu0214/blind75_note',
-      language: null,
-      stargazers_count: 1
-    },
-    {
-      name: 'ExaminerMachine',
-      description: 'An application that helps Cambridge International A Level Computer Science (9618) students mark papers.',
-      html_url: 'https://github.com/JasperWu0214/ExaminerMachine',
-      language: null,
-      stargazers_count: 0
-    }
-  ];
-
-  try {
-    const response = await fetch('https://api.github.com/users/JasperWu0214/repos?type=owner&sort=updated&per_page=100');
-    if (!response.ok) throw new Error('Repository data unavailable');
-    const repositories = await response.json();
-    if (!Array.isArray(repositories) || !repositories.length) throw new Error('No public repositories returned');
-    container.replaceChildren(...sortGitHubRepositories(repositories).map(createGitHubRepositoryCard));
-  } catch (error) {
-    container.replaceChildren(...sortGitHubRepositories(fallbackRepositories).map(createGitHubRepositoryCard));
-  }
-}
-
-loadGitHubRepositories();
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
 });
@@ -1654,26 +1479,25 @@ function createCard(icon, label) {
     </div>`;
 }
 
-// Tech Stack
-const techItems = [
-  ['🐍', 'Python'], ['☕', 'Java'], ['⚡', 'C++'],
-  ['📜', 'JavaScript'], ['🔷', 'TypeScript'], ['🏷️', 'HTML'],
-  ['🎨', 'CSS'], ['🗄️', 'SQL'], ['▲', 'Next.js'],
-  ['⚛️', 'React'], ['🌊', 'Tailwind CSS'], ['🧠', 'PyTorch'],
-  ['🔢', 'NumPy'], ['🐼', 'Pandas'], ['📓', 'Jupyter'],
-  ['🐧', 'Linux'], ['🔀', 'Git'], ['🐳', 'Docker'],
-  ['🐍', 'Python'], ['☕', 'Java'], ['⚡', 'C++'],
-  ['📜', 'JavaScript'], ['🔷', 'TypeScript'], ['🏷️', 'HTML'],
+// Developer Tools & Languages
+// Languages & Web → Version Control & Collaboration → Command Line & Editor
+const developerItems = [
+  ['🐍', 'Python'], ['📜', 'JavaScript'], ['🗄️', 'SQL'],
+  ['🏷️', 'HTML'], ['🎨', 'CSS'], ['⌨️', 'Bash'],
+  ['🔀', 'Git'], ['🐙', 'GitHub'], ['📝', 'Vim'],
+  ['🐍', 'Python'], ['📜', 'JavaScript'], ['🗄️', 'SQL'],
+  ['🏷️', 'HTML'], ['🎨', 'CSS'], ['⌨️', 'Bash'],
+  ['🔀', 'Git'], ['🐙', 'GitHub'], ['📝', 'Vim'],
 ];
-document.getElementById('tech-marquee').innerHTML = techItems.map(([i, l]) => createCard(i, l)).join('');
+document.getElementById('tech-marquee').innerHTML = developerItems.map(([i, l]) => createCard(i, l)).join('');
 
 // Honors
 const honorItems = [
-  ['🥇', 'SMC 2024 Gold Certificate'], ['⭐', 'Merit Student'], ['📝', 'CS Revision · 400+ Downloads'],
+  ['🥇', 'SMC 2024 Gold Certificate'], ['⭐', 'Merit Student'], ['📝', 'CS Revision · 400+ Downloads'], ['🥈', 'Air Leads League Hackathon · Silver'],
   ['🌍', 'CS Resources · 10+ Countries'], ['🎓', 'IELTS Club · 4 Peer Tutors'],
   ['🤝', 'WLSA · 20+ University Representatives'], ['🇨🇳🇺🇸', 'National Youth Ambassador'],
   ['📋', 'Class Committee Representative'], ['🏫', 'Seminar · 6 Schools · 50+ Attendees'],
-  ['🥇', 'SMC 2024 Gold Certificate'], ['⭐', 'Merit Student'], ['📝', 'CS Revision · 400+ Downloads'],
+  ['🥇', 'SMC 2024 Gold Certificate'], ['⭐', 'Merit Student'], ['📝', 'CS Revision · 400+ Downloads'], ['🥈', 'Air Leads League Hackathon · Silver'],
   ['🌍', 'CS Resources · 10+ Countries'], ['🎓', 'IELTS Club · 4 Peer Tutors'],
 ];
 document.getElementById('honors-marquee').innerHTML = honorItems.map(([i, l]) => createCard(i, l)).join('');
@@ -1690,5 +1514,7 @@ document.getElementById('qualities-marquee').innerHTML = qualityItems.map(([i, l
 </script>
 
 <!-- deploy-test: v2 -->
+<script src="/analytics.js" defer></script>
+<script src="./projects.js" defer></script>
 </body>
 </html>

@@ -1,5 +1,11 @@
 # Local Netlify folder
 .netlify
+public/
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
 
 # Private, unredacted IELTS score screenshots
 ielts-listening-5.5-before.jpeg

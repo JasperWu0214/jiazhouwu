@@ -1,0 +1,13 @@
+[build]
+  command = "node scripts/build.mjs"
+  publish = "public"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  node_bundler = "esbuild"
+
+[functions."daily-report"]
+  schedule = "0 0 * * *"
