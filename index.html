@@ -149,6 +149,13 @@ tailwind.config = {
     transform: translateY(0);
   }
 
+  /* Keep the decorative timeline behind readable, clickable experience cards. */
+  .experience-detail {
+    position: relative;
+    z-index: 1;
+    background-color: #1f2937;
+  }
+
   /* ===== FEEDBACK CAROUSEL ===== */
   .feedback-carousel {
     scroll-behavior: smooth;
@@ -272,7 +279,7 @@ tailwind.config = {
         As a high school student at Shenzhen Nanshan Foreign Language Senior High School, I am passionate about Computer Science and leveraging technology to solve real-world problems. My academic journey has been driven by curiosity, persistence, and a commitment to truth.
       </p>
       <p class="text-gray-300 text-lg">
-        Beyond academics, I helped maintain a Cambridge Computer Science revision guide, co-founded an IELTS club that served 60+ students, and led development of AstarLearningHome as its CTO. I am also designing an introductory computing course for incoming high-school students. Across these projects, I have learned to ask what learners need to understand and who may need a different way to access support.
+        Beyond academics, I helped maintain a Cambridge Computer Science revision guide, co-founded an IELTS club that served 60+ students, and led development of AstarLearningHome as its CTO. Across these projects, I have learned to ask what learners need to understand and who may need a different way to access support.
       </p>
       <p class="text-gray-300 text-lg">
         I enjoy working out, listening to music, and exploring the latest technology. My goal is to study Computer Science and contribute my own piece to the vast universe of knowledge.
@@ -328,19 +335,19 @@ tailwind.config = {
           <div class="bg-gray-800/80 rounded-lg p-6 shadow-lg space-y-4">
             <div>
               <div class="flex justify-between text-sm mb-1"><span class="text-gray-400">Grade 11 Winter</span><span class="text-white font-semibold">3.93</span></div>
-              <div class="w-full bg-gray-700 rounded-full h-2"><div class="bg-[#F8C4B4] h-2 rounded-full" style="width:98%"></div></div>
+              <div class="w-full bg-gray-700 rounded-full h-2" aria-hidden="true"><div class="bg-[#F8C4B4] h-2 rounded-full" style="width:98%"></div></div>
             </div>
             <div>
               <div class="flex justify-between text-sm mb-1"><span class="text-gray-400">Grade 11 Fall</span><span class="text-white font-semibold">3.93</span></div>
-              <div class="w-full bg-gray-700 rounded-full h-2"><div class="bg-[#F8C4B4] h-2 rounded-full" style="width:98%"></div></div>
+              <div class="w-full bg-gray-700 rounded-full h-2" aria-hidden="true"><div class="bg-[#F8C4B4] h-2 rounded-full" style="width:98%"></div></div>
             </div>
             <div>
               <div class="flex justify-between text-sm mb-1"><span class="text-gray-400">Grade 10 Winter</span><span class="text-white font-semibold">3.81</span></div>
-              <div class="w-full bg-gray-700 rounded-full h-2"><div class="bg-[#F8C4B4] h-2 rounded-full" style="width:95%"></div></div>
+              <div class="w-full bg-gray-700 rounded-full h-2" aria-hidden="true"><div class="bg-[#F8C4B4] h-2 rounded-full" style="width:89%"></div></div>
             </div>
             <div>
               <div class="flex justify-between text-sm mb-1"><span class="text-gray-400">Grade 10 Fall</span><span class="text-white font-semibold">3.76</span></div>
-              <div class="w-full bg-gray-700 rounded-full h-2"><div class="bg-[#F8C4B4] h-2 rounded-full" style="width:94%"></div></div>
+              <div class="w-full bg-gray-700 rounded-full h-2" aria-hidden="true"><div class="bg-[#F8C4B4] h-2 rounded-full" style="width:85%"></div></div>
             </div>
           </div>
         </div>
@@ -418,8 +425,7 @@ tailwind.config = {
   <div class="space-y-16 reveal">
     <!-- Developer Tools & Languages -->
     <div>
-      <h3 class="text-[#F8C4B4] text-lg font-semibold text-center">💻 Developer Tools &amp; Languages</h3>
-      <p class="text-gray-400 text-xs mt-2 mb-5 text-center">Languages &amp; Web · Version Control &amp; Collaboration · Command Line &amp; Editor</p>
+      <h3 class="text-[#F8C4B4] text-lg mb-5 font-semibold text-center">💻 Developer Tools &amp; Languages</h3>
       <div class="relative overflow-hidden py-4">
         <div class="flex gap-4 animate-marquee-left" id="tech-marquee">
         </div>
@@ -452,11 +458,11 @@ tailwind.config = {
 <section id="experience" class="container mx-auto px-4 md:px-6 py-20">
   <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center reveal">My Experience</h2>
 
-  <div class="relative">
+  <div class="relative experience-timeline">
     <!-- Center timeline line -->
-    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#F8C4B4]/30"></div>
+    <div aria-hidden="true" class="hidden md:block pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-1 bg-[#F8C4B4]/30 z-0"></div>
 
-    <div class="space-y-16">
+    <div class="relative z-10 space-y-16">
 
       <!-- Item 1: CS Revision Note -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
@@ -474,7 +480,7 @@ tailwind.config = {
         <div class="hidden md:block md:w-1/2"></div>
       </div>
 
-      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+      <div class="experience-detail bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
             I improved and helped sustain a Cambridge Computer Science revision guide for two years. After contacting its student author, I expanded Structured Query Language (SQL) explanations through independent study and curated 135 resources. The guide was downloaded 400+ times via Xiaohongshu and Reddit and reached learners in 10+ countries.
@@ -516,17 +522,10 @@ tailwind.config = {
               </div>
               <span class="shrink-0 bg-gray-700/70 text-gray-300 px-3 py-1 rounded-full text-xs font-medium">174 pages</span>
             </div>
-            <a href="AL%20CS%20MS%202026%20PDF%20Version.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the full Cambridge International AS &amp; A Level Computer Science revision note PDF" class="group block relative bg-white rounded-md overflow-hidden border border-gray-600 hover:border-[#F8C4B4] transition-colors">
-              <object data="AL%20CS%20MS%202026%20PDF%20Version.pdf#page=1&amp;view=FitH&amp;toolbar=0&amp;navpanes=0" type="application/pdf" class="w-full h-[520px] pointer-events-none" aria-label="Preview of the Cambridge International AS &amp; A Level Computer Science revision note">
-                <div class="h-[520px] flex flex-col items-center justify-center text-gray-800 px-6 text-center">
-                  <p class="font-semibold text-lg">Cambridge International AS &amp; A Level Computer Science</p>
-                  <p class="text-sm mt-2">PDF preview unavailable. Click to open the full revision note.</p>
-                </div>
-              </object>
-              <div class="absolute inset-x-0 bottom-0 bg-gray-950/90 text-[#F8C4B4] text-sm font-semibold text-center py-3 group-hover:bg-[#F8C4B4] group-hover:text-gray-950 transition-colors">
-                Click to open the full 174-page revision note ↗
-              </div>
-            </a>
+            <div class="inline-pdf-viewer rounded-md overflow-hidden border border-gray-600 bg-white">
+              <iframe src="AL%20CS%20MS%202026%20PDF%20Version.pdf#view=FitH&amp;toolbar=1&amp;navpanes=0" title="Scroll the Cambridge International AS and A Level Computer Science revision note" loading="lazy" class="block w-full h-[520px] sm:h-[620px] border-0 bg-white"></iframe>
+            </div>
+            <a href="AL%20CS%20MS%202026%20PDF%20Version.pdf" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-sm font-medium text-[#F8C4B4] hover:text-white">Open full PDF in a new tab ↗</a>
           </div>
 
           <!-- My contributions — local PDF -->
@@ -538,17 +537,10 @@ tailwind.config = {
                 <h4 class="text-white font-semibold text-lg">2025 Revision Updates &amp; Amending Suggestions</h4>
               </div>
             </div>
-            <a href="AS_Level_CS_Revision_Amending_Suggestions.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open my Computer Science revision contributions as a PDF" class="group block relative bg-white rounded-md overflow-hidden border border-gray-600 hover:border-[#F8C4B4] transition-colors">
-              <object data="AS_Level_CS_Revision_Amending_Suggestions.pdf#page=1&amp;view=FitH&amp;toolbar=0&amp;navpanes=0" type="application/pdf" aria-label="Preview of my Computer Science revision contributions" class="w-full h-[380px] sm:h-[520px] pointer-events-none bg-white">
-                <div class="h-[380px] sm:h-[520px] flex flex-col items-center justify-center px-6 text-center bg-gray-100">
-                  <p class="text-gray-900 font-semibold mb-2">2025 Revision Updates &amp; Amending Suggestions</p>
-                  <p class="text-gray-600 text-sm">PDF preview is unavailable in this browser. Click to open the full document.</p>
-                </div>
-              </object>
-              <div class="absolute inset-x-0 bottom-0 bg-gray-950/90 text-[#F8C4B4] text-sm font-semibold text-center py-3 group-hover:bg-[#F8C4B4] group-hover:text-gray-950 transition-colors">
-                Click to open my full contribution PDF ↗
-              </div>
-            </a>
+            <div class="inline-pdf-viewer rounded-md overflow-hidden border border-gray-600 bg-white">
+              <iframe src="AS_Level_CS_Revision_Amending_Suggestions.pdf#view=FitH&amp;toolbar=1&amp;navpanes=0" title="Scroll my 2025 Computer Science revision updates and amending suggestions" loading="lazy" class="block w-full h-[520px] sm:h-[620px] border-0 bg-white"></iframe>
+            </div>
+            <a href="AS_Level_CS_Revision_Amending_Suggestions.pdf" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-sm font-medium text-[#F8C4B4] hover:text-white">Open full PDF in a new tab ↗</a>
           </div>
 
           <!-- Curated AS Computer Science resource library -->
@@ -669,11 +661,8 @@ tailwind.config = {
               <span class="self-start shrink-0 rounded-full border border-[#F8C4B4]/40 bg-[#F8C4B4]/10 px-3 py-1.5 text-xs font-semibold text-[#F8C4B4]">Free of charge</span>
             </div>
 
-            <p class="text-gray-300 text-sm leading-relaxed mb-3">
-              Building the revision guide taught me to read mark schemes closely and distinguish possible inconsistencies from matters of examiner judgement. After results were released, I offered free support to five fellow candidates by comparing copies of their marked scripts with published mark schemes and identifying responses that might warrant a formal review of marking.
-            </p>
             <p class="text-gray-300 text-sm leading-relaxed mb-5">
-              Any formal Enquiry About Results was submitted through the candidate's school. One candidate later reported that the official review changed the final grade from B to A. My role was to help each candidate make a better-informed decision using the available evidence, not to determine the official outcome.
+              Building the revision guide taught me to read mark schemes closely and distinguish possible inconsistencies from matters of examiner judgement. After results were released, I offered free consultations to five fellow candidates, comparing their marked scripts with published mark schemes before they approached their schools about an Enquiry About Results.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
@@ -694,7 +683,6 @@ tailwind.config = {
             <div class="mb-4">
               <p class="text-[#F8C4B4] text-xs font-semibold uppercase tracking-wider">Process Evidence</p>
               <h5 class="text-white font-semibold text-lg mt-1">Conversation Records &amp; English Translations</h5>
-              <p class="mt-2 rounded-lg border border-[#F8C4B4]/40 bg-[#F8C4B4]/10 px-4 py-3 text-sm leading-relaxed text-gray-200">Each record shows an English summary and translated messages first. Select the screenshot below to view the original Chinese conversation at full size.</p>
             </div>
 
             <!-- Case 1 -->
@@ -932,18 +920,18 @@ tailwind.config = {
         <div class="hidden md:block md:w-1/2"></div>
       </div>
 
-      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+      <div class="experience-detail bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
-            AstarLearningHome is an exam preparation platform I founded with several junior students and led as CTO. It has reached 200+ users and graded 500+ exam answers with 90%+ accuracy. I led development of automated grading with feedback based on examiner reports, definition search across textbooks and past papers, photo-based question search, and mistake notebook exports.
+            AstarLearningHome is an exam preparation platform I founded with several junior students and led as CTO. It has reached 200+ users, includes 300+ flashcard definitions, and draws on a collection of 400+ past-paper questions. I led development of definition search across textbooks and past papers, flashcards, a topical question generator, photo-based question search, and mistake notebook exports.
           </p>
           <p class="text-gray-300 text-sm mb-5 italic border-l-2 border-[#F8C4B4] pl-4">
-            Building for real learners taught me that a useful score must also show students what to review and why.
+            Building for real learners taught me to make explanations easy to find and revisit.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 rounded-lg bg-gray-700/50 p-4 text-center">
             <div><p class="text-3xl font-bold text-[#F8C4B4]">200+</p><p class="text-xs text-gray-400 mt-1">Users Reached</p></div>
-            <div><p class="text-3xl font-bold text-[#F8C4B4]">500+</p><p class="text-xs text-gray-400 mt-1">Exam Answers Graded</p></div>
-            <div><p class="text-3xl font-bold text-[#F8C4B4]">90%+</p><p class="text-xs text-gray-400 mt-1">Reported Grading Accuracy</p></div>
+            <div><p class="text-3xl font-bold text-[#F8C4B4]">300+</p><p class="text-xs text-gray-400 mt-1">Flashcard Definitions</p></div>
+            <div><p class="text-3xl font-bold text-[#F8C4B4]">400+</p><p class="text-xs text-gray-400 mt-1">Past-Paper Questions Collected</p></div>
           </div>
           <h4 class="text-white font-semibold mb-3 text-sm">Platform Screenshots</h4>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -969,59 +957,7 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Item 4: Introductory CS Curriculum Designer -->
-      <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
-        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
-        <div class="md:w-1/2 md:pr-16 md:text-right">
-          <div class="flex items-center gap-3 mb-4 md:justify-end">
-            <div>
-              <h3 class="text-white font-bold text-xl">Introductory Computer Science Curriculum</h3>
-              <p class="text-[#F8C4B4] text-sm">Designer</p>
-              <p class="text-gray-400 text-xs mt-1">Course for Incoming High-School Students</p>
-            </div>
-            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">💻</div>
-          </div>
-        </div>
-        <div class="hidden md:block md:w-1/2"></div>
-      </div>
-
-      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
-        <div class="p-6">
-          <p class="text-gray-300 text-sm mb-4">
-            I am developing an introductory computing course for incoming high-school students, applying lessons from Harvard’s CS50 and MIT’s Missing Semester and exploring how AI can support beginners.
-          </p>
-          <p class="text-gray-300 text-sm mb-4">
-            I reached out to SFU Professor Angelica Lim to ask about AI use in introductory CS education. In a 72-hour Air Leads League Hackathon, my team built an AI agent tool and earned a Silver Award. These experiences taught me to ask whether a tool helps students understand a concept or simply delivers an answer.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-            <figure class="rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/60">
-              <div class="aspect-[3/2] bg-[#10151c] flex items-center justify-center">
-                <img src="basic-algorithm-quiz.png" alt="Basic algorithm quiz screenshot showing the Valid Palindrome problem and solution notes" loading="lazy" class="w-full h-full object-contain cursor-zoom-in" />
-              </div>
-              <figcaption class="border-t border-gray-700 px-4 py-3 text-sm text-gray-300">Screenshot from my basic algorithm quiz.</figcaption>
-            </figure>
-            <figure class="rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/60">
-              <div class="aspect-[3/2] bg-[#0d1117] flex items-center justify-center">
-                <img src="missing-semester-notes-preview.svg" alt="Preview of my MIT Missing Semester Lecture 1 Cornell notes on GitHub" loading="lazy" class="w-full h-full object-contain cursor-zoom-in" />
-              </div>
-              <figcaption class="border-t border-gray-700 px-4 py-3 text-sm text-gray-300">
-                My notes from studying MIT’s Missing Semester.
-                <a href="https://github.com/JasperWu0214/MIT-Missing-Semester/blob/main/missing-semester-lecture1-cornell-notes.md" target="_blank" rel="noopener noreferrer" class="block mt-1 text-[#F8C4B4] hover:text-white transition-colors">Read the notes on GitHub ↗</a>
-              </figcaption>
-            </figure>
-          </div>
-          <p class="text-gray-300 text-sm mb-4">
-            MIT calls it <a href="https://missing.csail.mit.edu/" target="_blank" rel="noopener noreferrer" class="text-[#F8C4B4] hover:text-white transition-colors">The Missing Semester of Your CS Education</a> because it teaches practical CS tools often left out of classes, such as the command line, text editors, and version control.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">CS Education</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">Curriculum Design</span>
-            <span class="bg-[#F8C4B4]/20 text-[#F8C4B4] hover:bg-[#F8C4B4]/30 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">AI &amp; Fundamentals</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 5: WLSA Student Operations Volunteer (left) -->
+      <!-- Item 4: WLSA Student Operations Volunteer (left) -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
         <div class="md:w-1/2 md:pr-16 md:text-right">
@@ -1037,7 +973,7 @@ tailwind.config = {
         <div class="hidden md:block md:w-1/2"></div>
       </div>
 
-      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+      <div class="experience-detail bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
             I supported a university fair involving 20+ university representatives and twice the expected number of families. When three sessions overlapped, I assigned volunteers to registration, crowd flow, and room coordination, and took over registration myself. Clear responsibilities helped the team keep sessions operating with minimal delay.
@@ -1073,15 +1009,15 @@ tailwind.config = {
             </a>
             <a href="#" class="block bg-gray-700/50 rounded-lg overflow-hidden border border-gray-600/50 hover:border-[#F8C4B4]/50 transition-all duration-300 group">
               <div class="h-40 bg-gray-700 relative overflow-hidden">
-                <img src="WLSA-event-picture.jpg" alt="2025 WLSA China Conference Tour event display" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <img src="wlsa-international-education-day-2025.jpg" alt="2025 Nanshan Foreign Language Senior High School International Education Day event sign" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
-              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">2025 WLSA China Conference Tour</span>
+              <span class="p-3 block text-sm text-gray-300 group-hover:text-[#F8C4B4] transition-colors">2025 International Education Day</span>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Item 6: China-US Exchange (right) -->
+      <!-- Item 5: China-US Exchange (right) -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
         <div class="md:w-1/2 md:pl-16">
@@ -1097,7 +1033,7 @@ tailwind.config = {
         <div class="hidden md:block md:w-1/2"></div>
       </div>
 
-      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+      <div class="experience-detail bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
             Selected as a student ambassador for a national China–U.S. youth exchange, I facilitated small-group conversations, shared meals and cultural activities, and helped visiting American high school students communicate across language and cultural differences. I stayed in touch with participants after the formal program ended.
@@ -1147,7 +1083,7 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Item 7: Cross-School Seminar (left) -->
+      <!-- Item 6: Cross-School Seminar (left) -->
       <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
         <div class="md:w-1/2 md:pr-16 md:text-right">
@@ -1163,7 +1099,7 @@ tailwind.config = {
         <div class="hidden md:block md:w-1/2"></div>
       </div>
 
-      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+      <div class="experience-detail bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
             I helped 50+ younger students navigate the Zhongkao and transition to senior high school by organizing and hosting a cross-school seminar. I recruited six senior students from six schools, designed the agenda, and coordinated logistics so participants could hear different approaches.
@@ -1207,23 +1143,73 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Item 8: Campus Volunteer (right — alternating) -->
-      <div class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
+      <!-- Item 7: 2026 Spring Model United Nations (right) -->
+      <div id="model-un-2026" class="relative flex flex-col md:flex-row items-center mb-12 md:flex-row-reverse reveal">
         <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
         <div class="md:w-1/2 md:pl-16">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🏫</div>
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🌐</div>
             <div>
-              <h3 class="text-white font-bold text-xl">Campus Volunteer</h3>
-              <p class="text-[#F8C4B4] text-sm">School 30th Anniversary</p>
-              <p class="text-gray-400 text-xs mt-1">Shenzhen Nanshan Foreign Language Senior High School</p>
+              <h3 class="text-white font-bold text-xl">Student Delegate &amp; Debater</h3>
+              <p class="text-[#F8C4B4] text-sm">2026 Spring Model United Nations Conference on Sustainable Development</p>
+              <p class="text-gray-400 text-xs mt-1">April 24–26, 2026 · Shenzhen</p>
             </div>
           </div>
         </div>
         <div class="hidden md:block md:w-1/2"></div>
       </div>
 
-      <div class="bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+      <div class="experience-detail bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
+        <div class="p-6">
+          <p class="text-gray-300 text-sm mb-4">
+            I participated as a student delegate and debater, presenting arguments on sustainable development, responding to other delegates, and looking for points of agreement. The conference brought participants together for three days across seven discussion topics, including energy transition, biodiversity, and APEC. It challenged me to defend a position while taking competing priorities seriously.
+          </p>
+          <div class="bg-gray-700/50 rounded-lg p-4 mb-5 flex items-center justify-center gap-6 md:gap-12 flex-wrap" aria-label="Conference-wide facts">
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">3</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Conference Days</p>
+            </div>
+            <div class="w-px h-12 bg-gray-600 hidden sm:block"></div>
+            <div class="text-center">
+              <p class="text-4xl md:text-5xl font-bold text-[#F8C4B4]">7</p>
+              <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Conference Topics</p>
+            </div>
+          </div>
+          <h4 class="text-white font-semibold mb-3 text-sm">Conference Photos</h4>
+          <div class="space-y-4">
+            <figure class="w-full max-w-lg mx-auto rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/60">
+              <div class="aspect-[3/2] overflow-hidden">
+                <img src="mun-sustainable-development-2026.png" alt="Opening ceremony of the 2026 Spring Model United Nations conference" loading="lazy" class="block w-full h-full object-cover object-top" />
+              </div>
+              <figcaption class="px-4 py-3 text-sm text-gray-300">Conference opening ceremony</figcaption>
+            </figure>
+            <figure class="w-full max-w-lg mx-auto rounded-lg overflow-hidden border border-gray-600/60 bg-gray-900/60">
+              <div class="aspect-[3/2] overflow-hidden">
+                <img src="mun-sustainable-development-2026.png" alt="Audience at the 2026 Spring Model United Nations conference" loading="lazy" class="block w-full h-full object-cover object-bottom" />
+              </div>
+              <figcaption class="px-4 py-3 text-sm text-gray-300">Conference audience</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 8: Campus Volunteer (left — alternating) -->
+      <div class="relative flex flex-col md:flex-row items-center mb-12 reveal">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#F8C4B4] z-10"></div>
+        <div class="md:w-1/2 md:pr-16 md:text-right">
+          <div class="flex items-center gap-3 mb-4 md:justify-end">
+            <div>
+              <h3 class="text-white font-bold text-xl">Campus Volunteer</h3>
+              <p class="text-[#F8C4B4] text-sm">School 30th Anniversary</p>
+              <p class="text-gray-400 text-xs mt-1">Shenzhen Nanshan Foreign Language Senior High School</p>
+            </div>
+            <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-gray-700 shadow-md shrink-0 flex items-center justify-center bg-white/10 text-lg">🏫</div>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <div class="experience-detail bg-gray-800/80 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto reveal">
         <div class="p-6">
           <p class="text-gray-300 text-sm mb-4">
             I served as a campus volunteer during my school's 30th anniversary celebration, welcoming returning alumni, guiding visitors, and helping the event run smoothly. It was not a leadership role with a title — no one reported to me, no crisis demanded my intervention. But standing there, watching alumni from different generations share laughter and memories, I understood something profound: a school is not just a building, it is a living community woven together by everyone who has ever passed through its halls.
@@ -1480,7 +1466,6 @@ function createCard(icon, label) {
 }
 
 // Developer Tools & Languages
-// Languages & Web → Version Control & Collaboration → Command Line & Editor
 const developerItems = [
   ['🐍', 'Python'], ['📜', 'JavaScript'], ['🗄️', 'SQL'],
   ['🏷️', 'HTML'], ['🎨', 'CSS'], ['⌨️', 'Bash'],

@@ -42,7 +42,15 @@
     const title = document.getElementById('github-contribution-title');
     if (!calendar || !title) return;
     const fragment = document.createDocumentFragment();
-    for (const day of days) {
+    const chronologicalDays = [...days].sort((a, b) => a.date.localeCompare(b.date));
+    // A partial first week still needs to line up with Sunday at the top.
+    const firstWeekday = new Date(`${chronologicalDays[0].date}T00:00:00Z`).getUTCDay();
+    for (let i = 0; i < firstWeekday; i++) {
+      const spacer = document.createElement('span');
+      spacer.setAttribute('aria-hidden', 'true');
+      fragment.appendChild(spacer);
+    }
+    for (const day of chronologicalDays) {
       const cell = document.createElement('span');
       const count = Number(day.count) || 0;
       const date = typeof day.date === 'string' ? day.date : '';
@@ -64,7 +72,10 @@
     const calendar = document.getElementById('github-contribution-calendar');
     if (!calendar) return;
     try {
-      const response = await fetch('/.netlify/functions/github-contributions', {
+      const endpoint = location.protocol === 'file:'
+        ? 'https://jiazhouwu.netlify.app/.netlify/functions/github-contributions'
+        : '/.netlify/functions/github-contributions';
+      const response = await fetch(endpoint, {
         signal: AbortSignal.timeout(10000),
       });
       if (!response.ok) throw new Error('Contribution activity unavailable');

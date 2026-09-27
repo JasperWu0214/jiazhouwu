@@ -8,8 +8,10 @@ const output = path.join(root, 'public');
 const privateFiles = new Set([
   // Historical enquiry summary predates the confirmed outcome.
   'Cambridge_Mark_Scheme_Appeal.docx',
+  'basic-algorithm-quiz.png',
   'ielts-listening-5.5-before.jpeg',
   'ielts-listening-7.5-after.jpeg',
+  'missing-semester-notes-preview.svg',
   'recommendation-cs-teacher-sample.pdf',
   'recommendation-homeroom-teacher-sample.pdf',
   'screenshot of appeal email.png',
